@@ -92,6 +92,11 @@ public class Controller{
 		
 	}
 	
+	/**
+	 * Updates the value of the button in the position of the positions array
+	 * @param position The position array holding the x and y value of the button
+	 * @param value The value to set the button to
+	 */
 	public void updateBoard(int[] position, int value) {
 		
 		int x = position[0];
