@@ -92,5 +92,12 @@ public class Controller{
 		
 	}
 	
+	public void updateBoard(int[] position, int value) {
+		
+		int x = position[0];
+		int y = position[1];
+		current_board.setValue(x, y, value);
+		
+	}
 	
 }
