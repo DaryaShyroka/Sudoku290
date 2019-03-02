@@ -1,15 +1,26 @@
+import javafx.application.Application;
+import javafx.stage.Stage;
 /**
  * This class represents the Sudoku board that will be displayed on the view.
- * @author Ikjot Dhillon
+ * @author Ikjot Dhillon, Derek Jang
  *
  */
 
 
-public class SudokuBoard {
+public class SudokuBoard extends Application{
 
 	private int board[][] = new int[9][9];
 	private CellButton buttons[][] = new CellButton[9][9];
-
+	//Model model;
+	SudokuView view;
+	
+	/** 
+	 * Launches the game.
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		launch(args);
+	}
 	/**
 	 *
 	 * @return the integer array board
@@ -29,4 +40,17 @@ public class SudokuBoard {
 		this.board[x][y] = value;
 		this.buttons[x][y].setNum(value);
 	}
+	
+	/**
+	 * Starts the game.
+	 * @param stage The stage for the game.
+	 */
+	@Override
+	public void start(Stage stage) throws Exception {
+		// TODO Auto-generated method stub
+		//this.model = new Model;
+		this.view = new SudokuView(stage);
+	}
+	
+	
 }
