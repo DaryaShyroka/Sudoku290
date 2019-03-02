@@ -14,13 +14,13 @@ import javafx.stage.Stage;
 public class SudokuView implements EventHandler<ActionEvent> {
 	
 	private Stage stage;
-	
+	//private Model model;
 	/**
 	 * Initializes a stage for the Sudoku game window.
 	 * @param stage What is displayed on the screen.
 	 */
 	public SudokuView(Stage stage) {
-		
+		//this.model = model;
 		this.stage = stage;
 		initUI(stage);
 	}
@@ -59,6 +59,15 @@ public class SudokuView implements EventHandler<ActionEvent> {
 	 * @param event An ActionEvent with the buttons. 
 	 */
 	public void handle(ActionEvent event) {
-		
+		String click = ((Button) event.getSource()).getText();
+		if(click == "New Game") {
+			
+		}
+		else if(click == "Clear") {
+			
+		}
+		else if(click == "Check") {
+			
+		}
 	}
 }
