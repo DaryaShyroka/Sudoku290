@@ -1,3 +1,18 @@
+/*
+* A CellButton represents a cell in the sudoku grid. 
+* Attributes:
+*   position: position in the grid
+*   currentNum: the current number in the cell
+*   changeable: whether currentNum can be modified
+*   controller: the Controller of this CellButton
+* Changeable CellButtons are ones in which the user fills the contents in themselves. 
+* If a CellButton is changeable, its currentNum field can be modified. 
+*
+* @author Darya Shyroka
+* @version 1.0
+* @since 2019-02-15
+*/
+
 import javafx.scene.control.*;
 
 public class CellButton extends Button{
