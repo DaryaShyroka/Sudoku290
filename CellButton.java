@@ -25,7 +25,7 @@ public class CellButton extends Button{
      * @param num
      */
     public void setNum(int num){
-
+        this.currentNum = num;
     }
 
     /**
@@ -34,7 +34,7 @@ public class CellButton extends Button{
      * @return currentNum
      */
     public num getNum(){
-        
+        return this.currentNum;
     }
 
     /**
@@ -43,7 +43,7 @@ public class CellButton extends Button{
      * @return position
      */
     public int[] getPosition(){
-        
+        return this.position;
     }
 
     /**
@@ -51,6 +51,6 @@ public class CellButton extends Button{
     */
     @Override
     public String toString(){
-
+        return "Value: " + this.currentNum + "Position: " + this.position[0] + ", " + this.position[1] + "Changeable: " + this.changeable; 
     }
 }
