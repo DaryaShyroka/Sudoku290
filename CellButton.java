@@ -58,7 +58,11 @@ public class CellButton extends Button{
      * @param num
      */
     public void setNum(int num){
-        this.currentNum = num;
+        if(this.changeable){
+            this.currentNum = num;
+        } else {
+            System.out.println("Cannot change a fixed cell!\n");
+        }
     }
 
     /**
@@ -83,7 +87,11 @@ public class CellButton extends Button{
     * Clear the number at this button
     */
     public void clear(){
-        this.currentNum = null;
+        if(this.changeable){
+            this.currentNum = null;
+        } else {
+            System.out.println("Cannot clear a fixed cell!\n");
+        }
     }
 
     /**
