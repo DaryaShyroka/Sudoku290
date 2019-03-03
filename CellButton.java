@@ -28,11 +28,27 @@ public class CellButton extends Button{
      *
      * @param position
      * @param changeable
+     * @param controller
      */
     public CellButton(int[] position, Boolean changeable, controller){
         this.position = position;
-        this.changeable = changeable;
         this.currentNum = null;
+        this.changeable = changeable;
+        this.controller = controller;
+    }
+
+    /**
+     * Constructor with all parameters set, including currentNum.
+     *
+     * @param position
+     * @param currentNum
+     * @param changeable
+     * @param controller
+     */
+    public CellButton(int[] position, int num, Boolean changeable, controller){
+        this.position = position;
+        this.currentNum = num;
+        this.changeable = changeable;
         this.controller = controller;
     }
 
