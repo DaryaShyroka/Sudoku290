@@ -32,9 +32,9 @@ public class CellButton extends Button{
      * @param changeable
      * @param controller
      */
-    public CellButton(int[] position, Boolean changeable, controller){
+    public CellButton(int position[], Boolean changeable, Controller controller){
         this.position = position;
-        this.currentNum = null;
+        this.currentNum = 0;
         this.changeable = changeable;
         this.controller = controller;
     }
@@ -47,7 +47,7 @@ public class CellButton extends Button{
      * @param changeable
      * @param controller
      */
-    public CellButton(int[] position, int num, Boolean changeable, controller){
+    public CellButton(int[] position, int num, Boolean changeable, Controller controller){
         this.position = position;
         this.currentNum = num;
         this.changeable = changeable;
@@ -90,7 +90,7 @@ public class CellButton extends Button{
     */
     public void clear(){
         if(this.changeable){
-            this.currentNum = null;
+            this.currentNum = 0;
         } else {
             System.out.println("Cannot clear a fixed cell!\n");
         }
