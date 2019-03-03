@@ -21,7 +21,7 @@ public class Controller{
 			
 			for(int j = 0; j < 9; j++) {
 				
-				current_board.setValue(i,j,0); 
+				current_board.setValue(0,i,j); 
 				//[i,j] are the coordinates of the cell, 0 is a placeholder
 				// value for an empty cell.
 			}
