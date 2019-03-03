@@ -61,6 +61,13 @@ public class CellButton extends Button{
         return this.position;
     }
 
+    /*
+    * Clear the number at this button
+    */
+    public void clear(){
+        this.currentNum = null;
+    }
+
     /**
     * Method to print a CellButton (for debugging purposes)
     */
