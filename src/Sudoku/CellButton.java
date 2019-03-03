@@ -1,3 +1,5 @@
+package Sudoku;
+
 /*
 * A CellButton represents a cell in the sudoku grid. 
 * Attributes:

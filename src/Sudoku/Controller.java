@@ -1,3 +1,5 @@
+package Sudoku;
+
 public class Controller{
 	
 	public SudokuBoard current_board;
