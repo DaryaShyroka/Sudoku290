@@ -41,9 +41,9 @@ public class Controller{
 		
 		for(int i = 0; i < 9; i++) { // check if the rows are complete
 			
-			int[9] rows = current_board.getRow(i);
-			int[9] cols = current_board.getCol(i);
-			int[9] x9sq = current_board.getSquare(i);
+			int[] rows = this.getRow(i);
+			int[] cols = this.getCol(i);
+			int[] x9sq = this.getSquare(i);
 			
 			if(!checkUnique(rows) || !checkUnique(cols) || !checkUnique(x9sq)) {
 				return false;
@@ -54,6 +54,50 @@ public class Controller{
 		return true;
 		
 	}
+	
+	/**
+	 * Returns a row of the current sudoku board.
+	 * @param indice An integer from 0 to 8.
+	 * @return The row of the sudoku board going from top to bottom.
+	 */
+	private int[] getRow(int indice){
+		return (current_board.getBoard())[indice];
+	}
+	
+	/**
+	 * Returns a column of the current sudoku board.
+	 * @param indice An integer from 0 to 8.
+	 * @return The colum of the sudoku board going from left to right.
+	 */
+	private int[] getCol(int indice){
+		int[] board_column = new int[9];
+		int[][] curr_board = current_board.getBoard();
+		for(int x = 0; x < 9; x++) {
+			board_column[x] = curr_board[x][indice];
+		}
+		return board_column;
+	}
+	
+	/**
+	 * Returns an inner 3x3 square of the current sudoku board.
+	 * @param indice An integer from 0 to 8.
+	 * @return The corresponding inner 3x3 square of the sudoku board, going from
+	 * top-left to bottom-right, iterating to the right before iterating down,
+	 * represented as an array of 9 integers.
+	 */
+	private int[] getSquare(int indice){
+		int[] board_square = new int[9];
+		int[][] curr_board = current_board.getBoard();
+		int x_start = (indice % 3)*3;
+		int y_start = Math.floorDiv(indice, 3)*3;
+		for(int x = 0; x < 3; x++) {
+			for(int y = 0; y < 3; y++) {
+				board_square[(Math.floorDiv(x, 3)*3) + y] = 
+						curr_board[x_start + x][y_start + y];
+			}
+		}
+		return board_square;
+	} 
 	
 	/**
 	 * Precondition: ilist has exactly 9 integers.
