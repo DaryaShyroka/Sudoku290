@@ -7,20 +7,14 @@ import javafx.stage.Stage;
  */
 
 
-public class SudokuBoard extends Application{
+public class SudokuBoard {
 
 	private int board[][] = new int[9][9];
 	private CellButton buttons[][] = new CellButton[9][9];
 	//Model model;
 	SudokuView view;
 	
-	/** 
-	 * Launches the game.
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		launch(args);
-	}
+	
 	/**
 	 *
 	 * @return the integer array board
@@ -45,12 +39,12 @@ public class SudokuBoard extends Application{
 	 * Starts the game.
 	 * @param stage The stage for the game.
 	 */
-	@Override
+	/*@Override
 	public void start(Stage stage) throws Exception {
 		// TODO Auto-generated method stub
 		//this.model = new Model;
 		this.view = new SudokuView(stage);
 	}
-	
+	*/
 	
 }

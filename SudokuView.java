@@ -1,4 +1,5 @@
 import javafx.event.EventHandler;
+import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
@@ -11,19 +12,36 @@ import javafx.stage.Stage;
  * @author Derek Jang
  *
  */
-public class SudokuView implements EventHandler<ActionEvent> {
+public class SudokuView extends Application implements EventHandler<ActionEvent> {
 	
-	private Stage stage;
+	//private Stage stage;
 	//private Model model;
 	/**
 	 * Initializes a stage for the Sudoku game window.
 	 * @param stage What is displayed on the screen.
 	 */
-	public SudokuView(Stage stage) {
+	
+	
+	/** 
+	 * Launches the game.
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		launch(args);
+	}
+	
+	
+	@Override
+	public void start(Stage stage) throws Exception {
+		this.initUI(stage);	
+	}
+	
+	
+	/*public SudokuView(Stage stage) {
 		//this.model = model;
 		this.stage = stage;
 		initUI(stage);
-	}
+	}*/
 	
 	/**
 	 * Takes a stage and creates the Sudoku game control buttons. 
@@ -70,4 +88,6 @@ public class SudokuView implements EventHandler<ActionEvent> {
 			
 		}
 	}
+
+	
 }
