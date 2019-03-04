@@ -35,7 +35,8 @@ public class SudokuBoard extends GridPane implements EventHandler<ActionEvent>{
     		for (int k = 0; k < 9; k++) {
     			int[] position = {i, k};
     			Button btn = new CellButton(position, true);
-					
+				btn.setOnAction(this);
+				btn.setText(Integer.toString(board[k][i]));
     			btn.setMinSize(50, 50);
     			this.add(btn, i, k);
     		}
