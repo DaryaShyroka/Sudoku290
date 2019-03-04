@@ -4,6 +4,11 @@ public class Controller{
 	
 	public SudokuBoard current_board;
 	
+	/**
+	 * Creates a new Controller object
+	 * 
+	 * @param board The SudokuBoard the Controller gets input from
+	 */
 	public Controller(SudokuBoard board) {
 		this.current_board = board;
 	}
