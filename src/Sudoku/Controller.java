@@ -4,6 +4,10 @@ public class Controller{
 	
 	public SudokuBoard current_board;
 	
+	public Controller(SudokuBoard board) {
+		this.current_board = board;
+	}
+	
 	/**
 	 * This method will replace the board attribute with a new random one, and
 	 * update the model and view accordingly.
