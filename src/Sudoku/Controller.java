@@ -4,10 +4,6 @@ public class Controller{
 	
 	public SudokuBoard current_board;
 	
-	public Controller(SudokuBoard board) {
-		this.current_board = board;
-	}
-	
 	/**
 	 * Creates a new Controller object
 	 * 
