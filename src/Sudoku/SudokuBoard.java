@@ -22,7 +22,7 @@ public class SudokuBoard extends GridPane {
     	for (int i = 0; i < 9; i++) {
     		for (int k = 0; k < 9; k++) {
     			int[] position = {i, k};
-    			Button btn = new CellButton(position, true, new Controller(this));
+    			Button btn = new CellButton(position, true);
     			btn.setMinSize(50, 50);
     			this.add(btn, i, k);   		
     		}

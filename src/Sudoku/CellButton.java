@@ -22,7 +22,6 @@ public class CellButton extends Button{
     private int[] position;
     private int currentNum;
     private Boolean changeable;
-    private Controller controller;
     
     /**
      * Constructor with mandatory parameters.
@@ -32,11 +31,10 @@ public class CellButton extends Button{
      * @param changeable
      * @param controller
      */
-    public CellButton(int position[], Boolean changeable, Controller controller){
+    public CellButton(int position[], Boolean changeable){
         this.position = position;
         this.currentNum = 0;
         this.changeable = changeable;
-        this.controller = controller;
     }
 
     /**
@@ -47,11 +45,10 @@ public class CellButton extends Button{
      * @param changeable
      * @param controller
      */
-    public CellButton(int[] position, int num, Boolean changeable, Controller controller){
+    public CellButton(int[] position, int num, Boolean changeable){
         this.position = position;
         this.currentNum = num;
         this.changeable = changeable;
-        this.controller = controller;
     }
 
     /**
