@@ -1,6 +1,8 @@
 package Sudoku;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
@@ -11,18 +13,30 @@ import javafx.scene.layout.GridPane;
  */
 
 
-public class SudokuBoard extends GridPane {
+public class SudokuBoard extends GridPane implements EventHandler<ActionEvent>{
 
 	private int board[][] = new int[9][9];
 	private CellButton buttons[][] = new CellButton[9][9];
 	//Model model;
 	//SudokuView view;
     public SudokuBoard(){
-		
+    	
+    	int[][]tempboard = {{0, 0, 0, 0, 9, 0, 7, 0, 0},
+                 {0, 6, 1, 0, 0, 0, 0, 4, 0}, 
+                 {0, 0, 0, 0, 0, 2, 0, 0, 3}, 
+                 {0, 0, 7, 4, 8, 0, 0, 0, 0}, 
+                 {0, 8, 0, 0, 0, 0, 6, 0, 0},
+                 {0, 0, 3, 0, 0, 0, 5, 0, 0},
+                 {0, 0, 0, 5, 0, 0, 2, 0, 0},
+                 {9, 0, 0, 1, 0, 0, 0, 0, 0},
+                 {5, 0, 2, 0, 0, 0, 0, 8, 6}};
+		board = tempboard;
     	for (int i = 0; i < 9; i++) {
     		for (int k = 0; k < 9; k++) {
     			int[] position = {i, k};
-    			Button btn = new CellButton(position, true, new Controller(this));
+    			CellButton btn = new CellButton(position, true, new Controller(this));
+    			btn.setOnAction(this);
+    			btn.setText(Integer.toString(board[k][i]));
     			btn.setMinSize(50, 50);
     			this.add(btn, i, k);   		
     		}
@@ -37,6 +51,7 @@ public class SudokuBoard extends GridPane {
 		return this.board;
 	}
 	
+	
 	/**
 	 * Set the value of the board array and buttons array at position x and y.
 	 *
@@ -47,6 +62,12 @@ public class SudokuBoard extends GridPane {
 	public void setValue(int value, int x, int y) {
 		this.board[x][y] = value;
 		this.buttons[x][y].setNum(value);
+	}
+
+	@Override
+	public void handle(ActionEvent event) {
+		// TODO Auto-generated method stub
+		((Button) event.getSource()).setText("0");
 	}
 	
 	/**
