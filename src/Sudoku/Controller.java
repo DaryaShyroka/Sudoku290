@@ -9,6 +9,15 @@ public class Controller{
 	}
 	
 	/**
+	 * Creates a new Controller object
+	 * 
+	 * @param board The SudokuBoard the Controller modifies
+	 */
+	public Controller(SudokuBoard board) {
+		this.current_board = board;
+	}
+	
+	/**
 	 * This method will replace the board attribute with a new random one, and
 	 * update the model and view accordingly.
 	 */

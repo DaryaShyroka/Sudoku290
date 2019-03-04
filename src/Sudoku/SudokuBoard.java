@@ -6,7 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 /**
  * This class represents the Sudoku board that will be displayed on the view.
- * @author Ikjot Dhillon, Derek Jang, Saadaf Chowdhury
+ * @author Ikjot Dhillon, Derek Jang, Saadaf Chowdhury, Sam Newby
  *
  */
 
@@ -21,8 +21,8 @@ public class SudokuBoard extends GridPane {
 		
     	for (int i = 0; i < 9; i++) {
     		for (int k = 0; k < 9; k++) {
-    			int[] position = {i, k};
-    			Button btn = new CellButton(position, true, new Controller(this));
+    			int pos[] = {i, k};
+    			CellButton btn = new CellButton(pos, true);
     			btn.setMinSize(50, 50);
     			this.add(btn, i, k);   		
     		}
@@ -47,6 +47,15 @@ public class SudokuBoard extends GridPane {
 	public void setValue(int value, int x, int y) {
 		this.board[x][y] = value;
 		this.buttons[x][y].setNum(value);
+	}
+	
+	/**
+	 * Adds the button to the current Sudokuboard
+	 * 
+	 * @param button The CellButton to be added to the board
+	 */
+	public void add(CellButton button, int x, int y) {
+		this.buttons[x][y] = button;
 	}
 	
 	/**

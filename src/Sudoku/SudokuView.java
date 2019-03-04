@@ -16,6 +16,7 @@ import javafx.stage.Stage;
  */
 public class SudokuView extends Application implements EventHandler<ActionEvent> {
 	private SudokuBoard board;
+	private Controller controller;
 	//private Stage stage;
 	//private Model model;
 	/**
@@ -69,6 +70,7 @@ public class SudokuView extends Application implements EventHandler<ActionEvent>
 		BorderPane border = new BorderPane();
 		border.setLeft(leftPanel);
 		this.board = new SudokuBoard();
+		this.controller = new Controller(this.board);
 		border.setRight(board);
 		
 		Scene scene = new Scene(border);
