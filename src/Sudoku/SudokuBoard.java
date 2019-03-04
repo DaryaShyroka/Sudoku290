@@ -20,11 +20,11 @@ public class SudokuBoard extends GridPane implements EventHandler<ActionEvent>{
 	//Model model;
 	//SudokuView view;
     public SudokuBoard(){
-    	
+
     	int[][]tempboard = {{0, 0, 0, 0, 9, 0, 7, 0, 0},
-                 {0, 6, 1, 0, 0, 0, 0, 4, 0}, 
-                 {0, 0, 0, 0, 0, 2, 0, 0, 3}, 
-                 {0, 0, 7, 4, 8, 0, 0, 0, 0}, 
+                 {0, 6, 1, 0, 0, 0, 0, 4, 0},
+                 {0, 0, 0, 0, 0, 2, 0, 0, 3},
+                 {0, 0, 7, 4, 8, 0, 0, 0, 0},
                  {0, 8, 0, 0, 0, 0, 6, 0, 0},
                  {0, 0, 3, 0, 0, 0, 5, 0, 0},
                  {0, 0, 0, 5, 0, 0, 2, 0, 0},
@@ -34,15 +34,14 @@ public class SudokuBoard extends GridPane implements EventHandler<ActionEvent>{
     	for (int i = 0; i < 9; i++) {
     		for (int k = 0; k < 9; k++) {
     			int[] position = {i, k};
-    			CellButton btn = new CellButton(position, true, new Controller(this));
-    			btn.setOnAction(this);
-    			btn.setText(Integer.toString(board[k][i]));
+    			Button btn = new CellButton(position, true);
+					
     			btn.setMinSize(50, 50);
-    			this.add(btn, i, k);   		
+    			this.add(btn, i, k);
     		}
-    	}		
+    	}
 	}
-	
+
 	/**
 	 *
 	 * @return the integer array board
@@ -50,8 +49,8 @@ public class SudokuBoard extends GridPane implements EventHandler<ActionEvent>{
 	public int[][] getBoard() {
 		return this.board;
 	}
-	
-	
+
+
 	/**
 	 * Set the value of the board array and buttons array at position x and y.
 	 *
@@ -69,7 +68,7 @@ public class SudokuBoard extends GridPane implements EventHandler<ActionEvent>{
 		// TODO Auto-generated method stub
 		((Button) event.getSource()).setText("0");
 	}
-	
+
 	/**
 	 * Starts the game.
 	 * @param stage The stage for the game.
@@ -81,6 +80,5 @@ public class SudokuBoard extends GridPane implements EventHandler<ActionEvent>{
 		this.view = new SudokuView(stage);
 	}
 	*/
-	
-}
 
+}
