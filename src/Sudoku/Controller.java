@@ -7,7 +7,7 @@ public class Controller{
 	/**
 	 * Creates a new Controller object
 	 * 
-	 * @param board The SudokuBoard the Controller gets input from
+	 * @param board The SudokuBoard the Controller modifies
 	 */
 	public Controller(SudokuBoard board) {
 		this.current_board = board;
