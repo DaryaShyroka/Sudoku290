@@ -19,7 +19,6 @@ import javafx.scene.control.*;
 
 public class CellButton extends Button{
 
-    private int[] position;
     private int currentNum;
     private Boolean changeable;
 
@@ -31,8 +30,7 @@ public class CellButton extends Button{
      * @param changeable
      * @param controller
      */
-    public CellButton(int position[], Boolean changeable){
-        this.position = position;
+    public CellButton(Boolean changeable){
         this.currentNum = 0;
         this.changeable = changeable;
     }
@@ -45,8 +43,7 @@ public class CellButton extends Button{
      * @param changeable
      * @param controller
      */
-    public CellButton(int[] position, int num, Boolean changeable){
-        this.position = position;
+    public CellButton( int num, Boolean changeable){
         this.currentNum = num;
         this.changeable = changeable;
     }
@@ -73,15 +70,6 @@ public class CellButton extends Button{
         return this.currentNum;
     }
 
-    /**
-     * Method to get the position of the CellButton
-     *
-     * @return position
-     */
-    public int[] getPosition(){
-        return this.position;
-    }
-
     /*
     * Clear the number at this button
     */
@@ -98,6 +86,6 @@ public class CellButton extends Button{
     */
     @Override
     public String toString(){
-        return "Value: " + this.currentNum + "Position: " + this.position[0] + ", " + this.position[1] + "Changeable: " + this.changeable;
+        return "Value: " + this.currentNum  + "Changeable: " + this.changeable;
     }
 }
