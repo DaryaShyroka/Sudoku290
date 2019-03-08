@@ -18,7 +18,7 @@ public class Controller{
 	 * update the model and view accordingly.
 	 */
 	public void newGame() {
-		// swap new board here, to be implemented later.
+		
 	}
 	
 	/**

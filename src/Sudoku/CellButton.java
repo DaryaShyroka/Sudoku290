@@ -1,14 +1,14 @@
 package Sudoku;
 
 /*
-* A CellButton represents a cell in the sudoku grid. 
+* A CellButton represents a cell in the sudoku grid.
 * Attributes:
 *   position: position in the grid
 *   currentNum: the current number in the cell
 *   changeable: whether currentNum can be modified
 *   controller: the Controller of this CellButton
-* Changeable CellButtons are ones in which the user fills the contents in themselves. 
-* If a CellButton is changeable, its currentNum field can be modified. 
+* Changeable CellButtons are ones in which the user fills the contents in themselves.
+* If a CellButton is changeable, its currentNum field can be modified.
 *
 * @author Darya Shyroka
 * @version 1.0
@@ -22,8 +22,7 @@ public class CellButton extends Button{
     private int[] position;
     private int currentNum;
     private Boolean changeable;
-    private Controller controller;
-    
+
     /**
      * Constructor with mandatory parameters.
      * Position and changeability must be set, number can be set afterwards (grid starts out with some buttons blank).
@@ -97,6 +96,6 @@ public class CellButton extends Button{
     */
     @Override
     public String toString(){
-        return "Value: " + this.currentNum + "Position: " + this.position[0] + ", " + this.position[1] + "Changeable: " + this.changeable; 
+        return "Value: " + this.currentNum + "Position: " + this.position[0] + ", " + this.position[1] + "Changeable: " + this.changeable;
     }
 }
