@@ -1,7 +1,4 @@
 package Sudoku;
-
-import java.util.Observable;
-
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -15,9 +12,10 @@ import javafx.scene.layout.GridPane;
  */
 
 
-public class SudokuBoard extends Observable {
+public class SudokuBoard {
 
 	private int board[][] = new int[9][9];
+	private SudokuView view;
 	//Model model;
 	//SudokuView view;
     public SudokuBoard(){
@@ -53,6 +51,7 @@ public class SudokuBoard extends Observable {
 	 */
 	public void setValue(int value, int x, int y) {
 		this.board[x][y] = value;
+		view.update(value, x, y);
 	}
 
 	/**
@@ -66,4 +65,5 @@ public class SudokuBoard extends Observable {
 		this.view = new SudokuView(stage);
 	}
 	*/
+	
 }
