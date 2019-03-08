@@ -23,6 +23,7 @@ public class SudokuView extends Application implements EventHandler<ActionEvent>
 	//private Stage stage;
 	//private Model model;
 	private Controller controller;
+	private CellButton currentButton;
 	/**
 	 * Initializes a stage for the Sudoku game window.
 	 * @param stage What is displayed on the screen.
@@ -102,19 +103,21 @@ public class SudokuView extends Application implements EventHandler<ActionEvent>
 	 * @param event An ActionEvent with the buttons. 
 	 */
 	public void handle(ActionEvent event) {
-		String click = ((Button) event.getSource()).getText();
-		System.out.println(event);
-		System.out.println("Click is " + click);
-		if(click == "New Game") {
-			
-		}
-		else if(click == "Clear") {
-			
-		}
-		else if(click == "Check") {
-			
+		if (event.getSource().getClass() == CellButton.class) {
+			this.currentButton = ((CellButton) event.getSource());
 		} else {
-			
+			String click = ((Button) event.getSource()).getText();
+			if(click == "New Game") {
+				this.controller.newGame();
+			}
+			else if(click == "Clear") {
+				this.controller.clear();
+			}
+			else if(click == "Check") {
+				this.controller.check();
+			} else {
+				
+			}	
 		}
 	}
 
