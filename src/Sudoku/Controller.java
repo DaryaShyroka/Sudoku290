@@ -3,9 +3,13 @@ package Sudoku;
 public class Controller{
 	
 	public SudokuBoard current_board;
-	
-	public Controller(SudokuView view) {
-		this.current_board = new SudokuBoard(view);
+	/**
+	 * Creates a new Controller object
+	 * 
+	 * @param board The SudokuBoard the Controller modifies
+	 */
+	public Controller(SudokuBoard board) {
+		this.current_board = board;
 	}
 	
 	/**

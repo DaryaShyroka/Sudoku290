@@ -78,7 +78,7 @@ public class SudokuView extends Application implements EventHandler<ActionEvent>
 	private void initUI(Stage stage) {
 		
 		stage.setTitle("Sudoku290");
-		this.controller = new Controller(this);
+		this.controller = new Controller(new SudokuBoard(this));
 		
 		VBox leftPanel = new VBox();
 		

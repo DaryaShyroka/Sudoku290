@@ -29,7 +29,6 @@ public class CellButton extends Button{
      *
      * @param position
      * @param changeable
-     * @param controller
      */
     public CellButton(int position[], Boolean changeable){
         this.position = position;
@@ -43,7 +42,6 @@ public class CellButton extends Button{
      * @param position
      * @param currentNum
      * @param changeable
-     * @param controller
      */
     public CellButton(int[] position, int num, Boolean changeable){
         this.position = position;
