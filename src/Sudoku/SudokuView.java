@@ -2,6 +2,9 @@ package Sudoku;
 
 import javafx.event.EventHandler;
 
+import java.util.Observable;
+import java.util.Observer;
+
 import javax.swing.JOptionPane;
 
 import javafx.application.Application;
@@ -20,7 +23,7 @@ import javafx.stage.Stage;
  * @author Derek Jang
  *
  */
-public class SudokuView extends Application implements EventHandler<ActionEvent> {
+public class SudokuView extends Application implements EventHandler<ActionEvent>, Observer {
 	//private Stage stage;
 	//private Model model;
 	private Controller controller;
@@ -51,8 +54,7 @@ public class SudokuView extends Application implements EventHandler<ActionEvent>
 		
 		for (int i = 0; i < 9; i++) {
     		for (int k = 0; k < 9; k++) {
-    			int[] position = {i, k};
-    			Button btn = new CellButton(position, true);
+    			Button btn = new CellButton(true);
 				btn.setOnAction(this);
     			btn.setMinSize(50, 50);
     			board.add(btn, i, k);
@@ -165,8 +167,17 @@ public class SudokuView extends Application implements EventHandler<ActionEvent>
 		if (this.currentButton != null) {
 			this.currentButton.setText(String.valueOf(numberPressed));
 			this.currentButton = null;
+		} else if (numberPressed == 0) {
+			System.out.println("Not a number");
 		} else {
 			System.out.println("Please pick a button first");
 		}
+	}
+
+
+	@Override
+	public void update(Observable arg0, Object arg1) {
+		// TODO Auto-generated method stub
+		
 	}
 }
