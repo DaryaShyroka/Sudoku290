@@ -4,8 +4,8 @@ public class Controller{
 	
 	public SudokuBoard current_board;
 	
-	public Controller(SudokuBoard board) {
-		this.current_board = board;
+	public Controller(SudokuView view) {
+		this.current_board = new SudokuBoard(view);
 	}
 	
 	/**
@@ -13,7 +13,23 @@ public class Controller{
 	 * update the model and view accordingly.
 	 */
 	public void newGame() {
+		int[][]tempboard = {{0, 0, 0, 0, 9, 0, 7, 0, 0},
+                {0, 6, 1, 0, 0, 0, 0, 4, 0},
+                {0, 0, 0, 0, 0, 2, 0, 0, 3},
+                {0, 0, 7, 4, 8, 0, 0, 0, 0},
+                {0, 8, 0, 0, 0, 0, 6, 0, 0},
+                {0, 0, 3, 0, 0, 0, 5, 0, 0},
+                {0, 0, 0, 5, 0, 0, 2, 0, 0},
+                {9, 0, 0, 1, 0, 0, 0, 0, 0},
+                {5, 0, 2, 0, 0, 0, 0, 8, 6}};
 		
+		for(int x = 0; x < 9; x++) {
+			for(int y = 0; y < 9; y++) {
+				int pos[] = {x,y};
+				int value = tempboard[x][y];
+				updateBoard(pos, value);
+			}
+		}
 	}
 	
 	/**
@@ -24,8 +40,8 @@ public class Controller{
 		for(int i = 0; i < 9; i++) {
 			
 			for(int j = 0; j < 9; j++) {
-				
-				current_board.setValue(0,i,j); 
+				int pos[] = {i,j};
+				updateBoard(pos,0); 
 				//[i,j] are the coordinates of the cell, 0 is a placeholder
 				// value for an empty cell.
 			}
@@ -148,10 +164,9 @@ public class Controller{
 	 * @param value The value to set the button to
 	 */
 	public void updateBoard(int[] position, int value) {
-		
 		int x = position[0];
 		int y = position[1];
-		current_board.setValue(x, y, value);
+		current_board.setValue(value, x, y);
 		
 	}
 	

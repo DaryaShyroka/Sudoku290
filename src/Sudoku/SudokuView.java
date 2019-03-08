@@ -25,7 +25,7 @@ public class SudokuView extends Application implements EventHandler<ActionEvent>
 	//private Model model;
 	private Controller controller;
 	private CellButton currentButton;
-	private Button[][] boardButtons;
+	private CellButton[][] boardButtons;
 	/**
 	 * Initializes a stage for the Sudoku game window.
 	 * @param stage What is displayed on the screen.
@@ -52,7 +52,8 @@ public class SudokuView extends Application implements EventHandler<ActionEvent>
 		
 		for (int i = 0; i < 9; i++) {
     		for (int k = 0; k < 9; k++) {
-    			Button btn = new CellButton(true);
+    			int pos[] = {k,i};
+    			CellButton btn = new CellButton(pos,true);
 				btn.setOnAction(this);
     			btn.setMinSize(50, 50);
     			board.add(btn, i, k);
@@ -77,6 +78,7 @@ public class SudokuView extends Application implements EventHandler<ActionEvent>
 	private void initUI(Stage stage) {
 		
 		stage.setTitle("Sudoku290");
+		this.controller = new Controller(this);
 		
 		VBox leftPanel = new VBox();
 		
@@ -113,7 +115,6 @@ public class SudokuView extends Application implements EventHandler<ActionEvent>
 	public void handle(ActionEvent event) {
 		if (event.getSource().getClass() == CellButton.class) {
 			this.currentButton = ((CellButton) event.getSource());
-			System.out.println("Setting CurrentButton to: " + this.currentButton);
 		} else {
 			String click = ((Button) event.getSource()).getText();
 			if(click == "New Game") {
@@ -125,7 +126,7 @@ public class SudokuView extends Application implements EventHandler<ActionEvent>
 			else if(click == "Check") {
 				this.controller.check();
 			} else {
-				
+				System.out.println("I dont know how you did this");
 			}	
 		}
 	}
@@ -163,11 +164,12 @@ public class SudokuView extends Application implements EventHandler<ActionEvent>
 		}
 		
 		System.out.println(String.valueOf(numberPressed));
-		if (this.currentButton != null) {
-			this.currentButton.setText(String.valueOf(numberPressed));
-			this.currentButton = null;
-		} else if (numberPressed == 0) {
+		if (numberPressed == 0) {
 			System.out.println("Not a number");
+		} else if (this.currentButton != null) {
+			int pos[] = this.currentButton.getPosition();
+			this.controller.updateBoard(pos, numberPressed);
+			this.currentButton = null;
 		} else {
 			System.out.println("Please pick a button first");
 		}
@@ -175,6 +177,6 @@ public class SudokuView extends Application implements EventHandler<ActionEvent>
 
 
 	public void update(int value, int x, int y) {
-		this.boardButtons[x][y].setText(String.valueOf(value));
+		this.boardButtons[x][y].setNum(value);
 	}
 }

@@ -59,7 +59,12 @@ public class CellButton extends Button{
     public void setNum(int num){
         if(this.changeable){
             this.currentNum = num;
-        } else {
+            if (num == 0) {
+            	this.setText(" ");
+            } else {
+            	this.setText(String.valueOf(num));
+            }
+            } else {
             System.out.println("Cannot change a fixed cell!\n");
         }
     }
