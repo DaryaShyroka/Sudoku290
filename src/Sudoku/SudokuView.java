@@ -2,8 +2,7 @@ package Sudoku;
 
 import javafx.event.EventHandler;
 
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+import javax.swing.JOptionPane;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -11,6 +10,8 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.control.Button;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -19,7 +20,7 @@ import javafx.stage.Stage;
  * @author Derek Jang
  *
  */
-public class SudokuView extends Application implements EventHandler<ActionEvent>, KeyListener {
+public class SudokuView extends Application implements EventHandler<ActionEvent> {
 	//private Stage stage;
 	//private Model model;
 	private Controller controller;
@@ -94,6 +95,12 @@ public class SudokuView extends Application implements EventHandler<ActionEvent>
 		border.setRight(makeBoard());
 		
 		Scene scene = new Scene(border);
+		scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+                onKeyPress(event);
+            }
+        });
 		stage.setScene(scene);
 		stage.show();
 	}
@@ -105,6 +112,7 @@ public class SudokuView extends Application implements EventHandler<ActionEvent>
 	public void handle(ActionEvent event) {
 		if (event.getSource().getClass() == CellButton.class) {
 			this.currentButton = ((CellButton) event.getSource());
+			System.out.println("Setting CurrentButton to: " + this.currentButton);
 		} else {
 			String click = ((Button) event.getSource()).getText();
 			if(click == "New Game") {
@@ -120,27 +128,45 @@ public class SudokuView extends Application implements EventHandler<ActionEvent>
 			}	
 		}
 	}
-
-
-	@Override
-	public void keyPressed(KeyEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public void keyReleased(KeyEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public void keyTyped(KeyEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-
 	
+	private void onKeyPress(KeyEvent event) {
+		int numberPressed = 0;
+		switch (event.getCode()) {
+			case DIGIT1:
+				numberPressed = 1;
+				break;
+			case DIGIT2:
+				numberPressed = 2;
+				break;
+			case DIGIT3:
+				numberPressed = 3;
+				break;
+			case DIGIT4:
+				numberPressed = 4;
+				break;
+			case DIGIT5:
+				numberPressed = 5;
+				break;
+			case DIGIT6:
+				numberPressed = 6;
+				break;
+			case DIGIT7:
+				numberPressed = 7;
+				break;
+			case DIGIT8:
+				numberPressed = 8;
+				break;
+			case DIGIT9:
+				numberPressed = 9;
+				break;
+		}
+		
+		System.out.println(String.valueOf(numberPressed));
+		if (this.currentButton != null) {
+			this.currentButton.setText(String.valueOf(numberPressed));
+			this.currentButton = null;
+		} else {
+			System.out.println("Please pick a button first");
+		}
+	}
 }
