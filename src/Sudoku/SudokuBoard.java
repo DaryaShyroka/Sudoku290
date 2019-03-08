@@ -13,10 +13,9 @@ import javafx.scene.layout.GridPane;
  */
 
 
-public class SudokuBoard extends GridPane implements EventHandler<ActionEvent>{
+public class SudokuBoard {
 
 	private int board[][] = new int[9][9];
-	private CellButton buttons[][] = new CellButton[9][9];
 	//Model model;
 	//SudokuView view;
     public SudokuBoard(){
@@ -31,16 +30,7 @@ public class SudokuBoard extends GridPane implements EventHandler<ActionEvent>{
                  {9, 0, 0, 1, 0, 0, 0, 0, 0},
                  {5, 0, 2, 0, 0, 0, 0, 8, 6}};
 		board = tempboard;
-    	for (int i = 0; i < 9; i++) {
-    		for (int k = 0; k < 9; k++) {
-    			int[] position = {i, k};
-    			Button btn = new CellButton(position, true);
-				btn.setOnAction(this);
-				btn.setText(Integer.toString(board[k][i]));
-    			btn.setMinSize(50, 50);
-    			this.add(btn, i, k);
-    		}
-    	}
+    	
 	}
 
 	/**
@@ -61,13 +51,6 @@ public class SudokuBoard extends GridPane implements EventHandler<ActionEvent>{
 	 */
 	public void setValue(int value, int x, int y) {
 		this.board[x][y] = value;
-		this.buttons[x][y].setNum(value);
-	}
-
-	@Override
-	public void handle(ActionEvent event) {
-		// TODO Auto-generated method stub
-		((Button) event.getSource()).setText("0");
 	}
 
 	/**

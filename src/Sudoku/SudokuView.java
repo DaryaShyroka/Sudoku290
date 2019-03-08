@@ -4,6 +4,7 @@ import javafx.event.EventHandler;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.control.Button;
 import javafx.scene.Scene;
@@ -15,9 +16,9 @@ import javafx.stage.Stage;
  *
  */
 public class SudokuView extends Application implements EventHandler<ActionEvent> {
-	private SudokuBoard board;
 	//private Stage stage;
 	//private Model model;
+	private Controller controller;
 	/**
 	 * Initializes a stage for the Sudoku game window.
 	 * @param stage What is displayed on the screen.
@@ -36,6 +37,23 @@ public class SudokuView extends Application implements EventHandler<ActionEvent>
 	@Override
 	public void start(Stage stage) throws Exception {
 		this.initUI(stage);	
+	}
+	
+	private GridPane makeBoard() {
+		CellButton buttons[][] = new CellButton[9][9];
+		GridPane board = new GridPane();
+		
+		for (int i = 0; i < 9; i++) {
+    		for (int k = 0; k < 9; k++) {
+    			int[] position = {i, k};
+    			Button btn = new CellButton(position, true);
+				btn.setOnAction(this);
+    			btn.setMinSize(50, 50);
+    			board.add(btn, i, k);
+    		}
+    	}
+		
+		return board;
 	}
 	
 	
@@ -68,8 +86,7 @@ public class SudokuView extends Application implements EventHandler<ActionEvent>
 		
 		BorderPane border = new BorderPane();
 		border.setLeft(leftPanel);
-		this.board = new SudokuBoard();
-		border.setRight(board);
+		border.setRight(makeBoard());
 		
 		Scene scene = new Scene(border);
 		stage.setScene(scene);
@@ -82,6 +99,8 @@ public class SudokuView extends Application implements EventHandler<ActionEvent>
 	 */
 	public void handle(ActionEvent event) {
 		String click = ((Button) event.getSource()).getText();
+		System.out.println(event);
+		System.out.println("Click is " + click);
 		if(click == "New Game") {
 			
 		}
@@ -89,6 +108,8 @@ public class SudokuView extends Application implements EventHandler<ActionEvent>
 			
 		}
 		else if(click == "Check") {
+			
+		} else {
 			
 		}
 	}
