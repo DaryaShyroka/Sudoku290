@@ -1,6 +1,10 @@
 package Sudoku;
 
 import javafx.event.EventHandler;
+
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.scene.layout.BorderPane;
@@ -15,7 +19,7 @@ import javafx.stage.Stage;
  * @author Derek Jang
  *
  */
-public class SudokuView extends Application implements EventHandler<ActionEvent> {
+public class SudokuView extends Application implements EventHandler<ActionEvent>, KeyListener {
 	//private Stage stage;
 	//private Model model;
 	private Controller controller;
@@ -112,6 +116,27 @@ public class SudokuView extends Application implements EventHandler<ActionEvent>
 		} else {
 			
 		}
+	}
+
+
+	@Override
+	public void keyPressed(KeyEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void keyReleased(KeyEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void keyTyped(KeyEvent arg0) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	
