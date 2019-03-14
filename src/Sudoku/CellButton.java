@@ -21,7 +21,6 @@ public class CellButton extends Button{
 
     private int[] position;
     private int currentNum;
-    private Boolean changeable;
 
     /**
      * Constructor with mandatory parameters.
@@ -30,10 +29,9 @@ public class CellButton extends Button{
      * @param position
      * @param changeable
      */
-    public CellButton(int position[], Boolean changeable){
+    public CellButton(int position[]){
         this.position = position;
         this.currentNum = 0;
-        this.changeable = changeable;
     }
 
     /**
@@ -43,10 +41,9 @@ public class CellButton extends Button{
      * @param currentNum
      * @param changeable
      */
-    public CellButton(int[] position, int num, Boolean changeable){
+    public CellButton(int[] position, int num){
         this.position = position;
         this.currentNum = num;
-        this.changeable = changeable;
     }
 
     /**
@@ -55,16 +52,12 @@ public class CellButton extends Button{
      * @param num
      */
     public void setNum(int num){
-        if(this.changeable){
             this.currentNum = num;
             if (num == 0) {
             	this.setText(" ");
             } else {
             	this.setText(String.valueOf(num));
             }
-            } else {
-            System.out.println("Cannot change a fixed cell!\n");
-        }
     }
 
     /**
@@ -89,11 +82,7 @@ public class CellButton extends Button{
     * Clear the number at this button
     */
     public void clear(){
-        if(this.changeable){
             this.currentNum = 0;
-        } else {
-            System.out.println("Cannot clear a fixed cell!\n");
-        }
     }
 
     /**
@@ -101,6 +90,6 @@ public class CellButton extends Button{
     */
     @Override
     public String toString(){
-        return "Value: " + this.currentNum + "Position: " + this.position[0] + ", " + this.position[1] + "Changeable: " + this.changeable;
+        return "Value: " + this.currentNum + "Position: " + this.position[0] + ", " + this.position[1];
     }
 }

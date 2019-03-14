@@ -53,7 +53,7 @@ public class SudokuView extends Application implements EventHandler<ActionEvent>
 		for (int i = 0; i < 9; i++) {
     		for (int k = 0; k < 9; k++) {
     			int pos[] = {k,i};
-    			CellButton btn = new CellButton(pos,true);
+    			CellButton btn = new CellButton(pos);
 				btn.setOnAction(this);
     			btn.setMinSize(50, 50);
     			board.add(btn, i, k);
@@ -171,7 +171,7 @@ public class SudokuView extends Application implements EventHandler<ActionEvent>
 			System.out.println("Not a number");
 		} else if (this.currentButton != null) {
 			int pos[] = this.currentButton.getPosition();
-			this.controller.updateBoard(pos, numberPressed);
+			this.controller.updateBoard(pos, numberPressed, false);
 			this.currentButton = null;
 		} else {
 			System.out.println("Please pick a button first");

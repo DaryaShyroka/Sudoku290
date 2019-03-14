@@ -31,7 +31,7 @@ public class Controller{
 			for(int y = 0; y < 9; y++) {
 				int pos[] = {x,y};
 				int value = tempboard[x][y];
-				updateBoard(pos, value);
+				updateBoard(pos, value, true);
 			}
 		}
 	}
@@ -45,7 +45,7 @@ public class Controller{
 			
 			for(int j = 0; j < 9; j++) {
 				int pos[] = {i,j};
-				updateBoard(pos,0); 
+				updateBoard(pos,0, false); 
 				//[i,j] are the coordinates of the cell, 0 is a placeholder
 				// value for an empty cell.
 			}
@@ -167,11 +167,14 @@ public class Controller{
 	 * @param position The position array holding the x and y value of the button
 	 * @param value The value to set the button to
 	 */
-	public void updateBoard(int[] position, int value) {
+	public void updateBoard(int[] position, int value, boolean newGame) {
 		int x = position[0];
 		int y = position[1];
-		current_board.setValue(value, x, y);
-		
+		if (newGame == true && value != 0) {
+			current_board.setValue(value, x, y, true);
+		} else {
+			current_board.setValue(value, x, y);
+		}
 	}
 	
 }
