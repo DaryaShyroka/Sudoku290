@@ -84,12 +84,15 @@ public class SudokuView extends Application implements EventHandler<ActionEvent>
 		
 		Button newGame = new Button("New Game");
 		newGame.setOnAction(this);
+		newGame.setMinSize(100, 50);
 		
 		Button clear = new Button("Clear");
 		clear.setOnAction(this);
+		clear.setMinSize(100, 50);
 		
 		Button check = new Button("Check");
 		check.setOnAction(this);
+		check.setMinSize(100, 50);
 		
 		leftPanel.getChildren().addAll(newGame, clear, check);
 		
