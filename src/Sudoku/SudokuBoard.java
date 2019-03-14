@@ -15,6 +15,7 @@ import javafx.scene.layout.GridPane;
 public class SudokuBoard {
 
 	private int board[][] = new int[9][9];
+	private boolean changable[][] = new boolean[9][9];
 	private SudokuView view;
 	//Model model;
 	//SudokuView view;
@@ -39,6 +40,24 @@ public class SudokuBoard {
 	 * @param y The y coordinate of the array.
 	 */
 	public void setValue(int value, int x, int y) {
+		this.board[x][y] = value;
+		view.update(value, x, y);
+	}
+	
+	/**
+	 * Sets the board array with the new game values that are not changable
+	 * 
+	 * @param value
+	 * @param x
+	 * @param y
+	 * @param newGame
+	 */
+	public void setValue(int value, int x, int y, boolean newGame) {
+		if (newGame) {
+			this.changable[x][y] = false;
+		} else {
+			this.changable[x][y] = true;
+		}
 		this.board[x][y] = value;
 		view.update(value, x, y);
 	}
