@@ -2,14 +2,14 @@ package Sudoku;
 
 public class Controller{
 	
-	public SudokuBoard current_board;
+	public SudokuBoard currentBoard;
 	/**
 	 * Creates a new Controller object
 	 * 
 	 * @param board The SudokuBoard the Controller modifies
 	 */
 	public Controller(SudokuBoard board) {
-		this.current_board = board;
+		this.currentBoard = board;
 	}
 	
 	/**
@@ -85,7 +85,7 @@ public class Controller{
 	 * @return The row of the sudoku board going from top to bottom.
 	 */
 	private int[] getRow(int indice){
-		return (current_board.getBoard())[indice];
+		return (currentBoard.getBoard())[indice];
 	}
 	
 	/**
@@ -95,9 +95,9 @@ public class Controller{
 	 */
 	private int[] getCol(int indice){
 		int[] board_column = new int[9];
-		int[][] curr_board = current_board.getBoard();
+		int[][] currBoard = currentBoard.getBoard();
 		for(int x = 0; x < 9; x++) {
-			board_column[x] = curr_board[x][indice];
+			board_column[x] = currBoard[x][indice];
 		}
 		return board_column;
 	}
@@ -111,13 +111,13 @@ public class Controller{
 	 */
 	private int[] getSquare(int indice){
 		int[] board_square = new int[9];
-		int[][] curr_board = current_board.getBoard();
+		int[][] currBoard = currentBoard.getBoard();
 		int x_start = (indice % 3)*3;
 		int y_start = Math.floorDiv(indice, 3)*3;
 		for(int x = 0; x < 3; x++) {
 			for(int y = 0; y < 3; y++) {
 				board_square[(Math.floorDiv(x, 3)*3) + y] = 
-						curr_board[x_start + x][y_start + y];
+						currBoard[x_start + x][y_start + y];
 			}
 		}
 		return board_square;
@@ -171,9 +171,9 @@ public class Controller{
 		int x = position[0];
 		int y = position[1];
 		if (newGame == true && value != 0) {
-			current_board.setValue(value, x, y, true);
+			setValue(value, x, y, true);
 		} else {
-			current_board.setValue(value, x, y);
+			currentBoard.setValue(value, x, y);
 		}
 	}
 	
