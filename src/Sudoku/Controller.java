@@ -171,7 +171,7 @@ public class Controller{
 		int x = position[0];
 		int y = position[1];
 		if (newGame == true && value != 0) {
-			setValue(value, x, y, true);
+			currentBoard.setValue(value, x, y, true);
 		} else {
 			currentBoard.setValue(value, x, y);
 		}
