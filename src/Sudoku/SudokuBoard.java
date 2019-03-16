@@ -15,7 +15,7 @@ import javafx.scene.layout.GridPane;
 public class SudokuBoard {
 
 	private int board[][] = new int[9][9];
-	private boolean notChangable[][] = new boolean[9][9];
+	public boolean notChangable[][] = new boolean[9][9];
 	private SudokuView view;
 	//Model model;
 	//SudokuView view;
