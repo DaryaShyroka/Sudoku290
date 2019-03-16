@@ -24,10 +24,9 @@ public class CellButton extends Button{
 
     /**
      * Constructor with mandatory parameters.
-     * Position and changeability must be set, number can be set afterwards (grid starts out with some buttons blank).
+     * Position set, currentNum can be set afterwards (grid starts out with some buttons blank).
      *
      * @param position
-     * @param changeable
      */
     public CellButton(int position[]){
         this.position = position;
@@ -38,8 +37,7 @@ public class CellButton extends Button{
      * Constructor with all parameters set, including currentNum.
      *
      * @param position
-     * @param currentNum
-     * @param changeable
+     * @param num
      */
     public CellButton(int[] position, int num){
         this.position = position;
