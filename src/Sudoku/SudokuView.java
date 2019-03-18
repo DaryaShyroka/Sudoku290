@@ -182,7 +182,7 @@ public class SudokuView extends Application implements EventHandler<ActionEvent>
 
 
 	public void update(int value, int x, int y) {
-		if(!this.controller.current_board.notChangable[x][y]) {
+		if(!this.controller.currentBoard.notChangable[x][y]) {
 			this.boardButtons[x][y].setStyle("-fx-text-fill: blue");
 		}
 		this.boardButtons[x][y].setNum(value);
