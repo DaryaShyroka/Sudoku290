@@ -1,5 +1,7 @@
 package Sudoku;
 
+import java.util.Random;
+
 public class Controller{
 	
 	public SudokuBoard currentBoard;
@@ -17,7 +19,7 @@ public class Controller{
 	 * update the model and view accordingly.
 	 */
 	public void newGame() {
-		int[][]tempboard = {{0, 0, 0, 0, 9, 0, 7, 0, 0},
+		int[][]tempboard1 = {{0, 0, 0, 0, 9, 0, 7, 0, 0},
                 {0, 6, 1, 0, 0, 0, 0, 4, 0},
                 {0, 0, 0, 0, 0, 2, 0, 0, 3},
                 {0, 0, 7, 4, 8, 0, 0, 0, 0},
@@ -27,10 +29,58 @@ public class Controller{
                 {9, 0, 0, 1, 0, 0, 0, 0, 0},
                 {5, 0, 2, 0, 0, 0, 0, 8, 6}};
 		
+		int[][]tempboard2 = {{0, 0, 0, 0, 0, 0, 3, 0, 0},
+                {8, 5, 2, 3, 0, 0, 0, 0, 1},
+                {0, 9, 0, 2, 0, 0, 0, 0, 4},
+                {9, 7, 4, 0, 0, 0, 0, 0, 0},
+                {0, 1, 0, 0, 6, 0, 0, 0, 0},
+                {0, 0, 0, 0, 4, 0, 0, 0, 0},
+                {6, 0, 9, 0, 8, 0, 0, 3, 7},
+                {3, 0, 0, 0, 0, 0, 0, 6, 0},
+                {0, 2, 0, 0, 0, 5, 0, 0, 0}};
+		
+		int[][]tempboard3 = {{0, 0, 7, 0, 0, 8, 0, 0, 0},
+                {0, 5, 0, 0, 0, 4, 0, 0, 0},
+                {0, 3, 1, 0, 0, 2, 5, 6, 0},
+                {0, 0, 0, 0, 0, 0, 0, 3, 0},
+                {0, 0, 6, 0, 0, 0, 7, 0, 0},
+                {0, 0, 9, 5, 0, 6, 8, 0, 0},
+                {0, 4, 0, 0, 0, 0, 0, 0, 5},
+                {0, 0, 0, 0, 0, 0, 0, 4, 0},
+                {7, 2, 0, 8, 0, 0, 0, 0, 3}};
+		
+		int[][]tempboard4 = {{0, 7, 0, 0, 8, 0, 6, 0, 0},
+				{5, 4, 0, 0, 0, 0, 0, 3, 0},
+				{0, 0, 0, 0, 0, 0, 0, 0, 1},
+				{7, 0, 0, 0, 0, 0, 8, 0, 6},
+				{0, 0, 0, 0, 0, 0, 0, 5, 0},
+				{2, 5, 0, 4, 1, 0, 0, 0, 0},
+				{0, 3, 0, 9, 4, 7, 0, 0, 0},
+				{8, 0, 9, 0, 0, 2, 0, 1, 0},
+				{0, 0, 0, 0, 0, 0, 0, 0, 0}};
+		
+		int[][]tempboard5 = {{2, 0, 0, 0, 0, 4, 0, 0, 0},
+				{0, 0, 5, 1, 0, 0, 0, 8, 0},
+				{8, 0, 0, 0, 0, 0, 3, 0, 5},
+				{3, 0, 7, 0, 4, 0, 0, 0, 0},
+				{0, 1, 0, 0, 0, 0, 0, 6, 0},
+				{0, 4, 0, 0, 0, 2, 0, 9, 0},
+				{0, 6, 3, 0, 0, 9, 0, 0, 0},
+				{0, 0, 2, 0, 3, 0, 8, 0, 0},
+				{0, 0, 0, 0, 0, 0, 0, 0, 0}}; 
+		int [][][] boards = {tempboard1, tempboard2,tempboard3,
+				tempboard4,tempboard5}; 
+		int randomBoard = new Random().nextInt(5);
+		for(int x = 0; x < 9; x++) {
+			for(int y = 0; y < 9; y++) {
+				this.currentBoard.notChangable[x][y] = false;
+			}
+		}
+		this.clear();
 		for(int x = 0; x < 9; x++) {
 			for(int y = 0; y < 9; y++) {
 				int pos[] = {x,y};
-				int value = tempboard[x][y];
+				int value = boards[randomBoard][x][y];
 				updateBoard(pos, value, true);
 			}
 		}
