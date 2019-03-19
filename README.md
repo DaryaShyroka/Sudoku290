@@ -32,6 +32,21 @@ until finished
 
 End with an example of getting some data out of the system or using it for a little demo
 
+### How to Play Sudoku290
+Welcome to Sudoku290!
+
+After downloading and installing the game, run the executable to arrive at the starting screen.
+
+The starting screen consists of 3 buttons (New Game, Clear, Check) and an empty 9x9 Sudoku Board. To begin the game, press the New Game button which will load starting numbers on to the board.
+
+The empty cells indicate positions where the player can input numbers. These cells can be changed and cleared at any time. The starting cells which already contain numbers cannot be changed or cleared. 
+
+To input a number into the cell, the player must first click on a valid cell and input a valid number from the keyboard. Entering any character other than 1-9 will result in nothing being inputed and an error message being printed. Attempting to enter a number into a starting cell will result in nothing being changed.
+
+The player can click the Clear and Check button during anytime of the game. Selecting Clear will result in removing all numbers the player entered. The Check button will test the board's values and show a dialogue box indicating whether the player is finished. 
+
+Once finished, the player can select New Game to start playing on a different board or the player can exit.
+
 ## Screenshots
 
 Our screenshots will go here
