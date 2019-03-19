@@ -1,6 +1,6 @@
 # Sudoku290
 
-One Paragraph of project description goes here
+Sudoku290 is a unique take on the classic game of Sudoku. It is a puzzle game consisting of a simple 9x9 grid that will begin with a few grid boxes that are already filled; the boxes will be filled with numbers from 1-9. Your job is to fill in the remaining grid boxes with numbers 1-9 so that each row and column only contain unique digits. You can play between five preset Sudoku290 boards that will be sure to challenge your brain!
 
 ## Getting Started
 
