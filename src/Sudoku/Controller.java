@@ -2,6 +2,8 @@ package Sudoku;
 
 import java.util.Random;
 
+import javax.swing.JOptionPane;
+
 public class Controller{
 	
 	public SudokuBoard currentBoard;
@@ -134,10 +136,12 @@ public class Controller{
 				if(ilist[i] == keepTrack || !foundIt) {
 					foundIt = true;
 				}else if(ilist[i] == keepTrack || foundIt) {
+					JOptionPane.showMessageDialog(null, "Incorrect! Please double check your inputs!");
 					return false; //there is a duplicate value.
 				}
 			}
 			if(!foundIt) {
+				JOptionPane.showMessageDialog(null, "Incorrect! Please double check your inputs!");
 				return false; //we have not found a required number
 			}else{
 				//we have found the required number exactly one, and so
@@ -148,6 +152,7 @@ public class Controller{
 		}
 		//if it reaches outside of the for-loop, it has found exactly one
 		//of every integer from 1 to 9.
+		JOptionPane.showMessageDialog(null, "Congratulations! You have all the correct inputs!");
 		return true;
 	}
 	
