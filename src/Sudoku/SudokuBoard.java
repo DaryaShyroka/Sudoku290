@@ -103,7 +103,8 @@ public class SudokuBoard {
 		int yStart = Math.floorDiv(indice, 3)*3; //capture the top row of the indice's inner square
 		for(int x = 0; x < 3; x++) {
 			for(int y = 0; y < 3; y++) {
-				boardSquare[(Math.floorDiv(x, 3)*3) + y] = 
+				int index = (x*3) + y;
+				boardSquare[index] = 
 						this.board[xStart + x][yStart + y];
 			}
 		}
