@@ -137,7 +137,7 @@ public class SudokuView extends Application implements EventHandler<ActionEvent>
 	}
 	
 	private void onKeyPress(KeyEvent event) {
-		int numberPressed = 0;
+		int numberPressed = -1;
 		switch (event.getCode()) {
 			case DIGIT1:
 				numberPressed = 1;
@@ -166,10 +166,13 @@ public class SudokuView extends Application implements EventHandler<ActionEvent>
 			case DIGIT9:
 				numberPressed = 9;
 				break;
+			case BACK_SPACE:
+				numberPressed = 0;
+				break;
 		}
 		
 		System.out.println(String.valueOf(numberPressed));
-		if (numberPressed == 0) {
+		if (numberPressed == -1) {
 			System.out.println("Not a number");
 		} else if (this.currentButton != null) {
 			int pos[] = this.currentButton.getPosition();
