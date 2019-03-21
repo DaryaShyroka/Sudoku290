@@ -65,41 +65,41 @@ public class SudokuBoard {
 	
 	/**
 	 * Returns a row of the current sudoku board.
-	 * @param indice An integer from 0 to 8.
+	 * @param index An integer from 0 to 8.
 	 * @return The row of the sudoku board going from top to bottom.
 	 */
-	public int[] getRow(int indice){
-		return this.board[indice];
+	public int[] getRow(int index){
+		return this.board[index];
 	}
 	
 	/**
 	 * Returns a column of the current sudoku board.
-	 * @param indice An integer from 0 to 8.
+	 * @param index An integer from 0 to 8.
 	 * @return The column of the sudoku board going from left to right.
 	 */
-	public int[] getCol(int indice){
+	public int[] getCol(int index){
 		int[] boardColumn = new int[9];
 		for(int x = 0; x < 9; x++) {
-			boardColumn[x] = this.board[x][indice];
+			boardColumn[x] = this.board[x][index];
 		}
 		return boardColumn;
 	}
 	
 	/**
 	 * Returns an inner 3x3 square of the current sudoku board.
-	 * @param indice An integer from 0 to 8.
+	 * @param index An integer from 0 to 8.
 	 * @return The corresponding inner 3x3 square of the sudoku board, going from
 	 * top-left to bottom-right, iterating to the right before iterating down,
 	 * represented as an array of 9 integers.
 	 */
-	public int[] getSquare(int indice){
+	public int[] getSquare(int index){
 		int[] boardSquare = new int[9];
-		int xStart = (indice % 3)*3; //capture the leftmost column of the indice's inner square
-		int yStart = Math.floorDiv(indice, 3)*3; //capture the top row of the indice's inner square
+		int xStart = (index % 3)*3; //capture the leftmost column of the indice's inner square
+		int yStart = Math.floorDiv(index, 3)*3; //capture the top row of the indice's inner square
 		for(int x = 0; x < 3; x++) {
 			for(int y = 0; y < 3; y++) {
-				int index = (x*3) + y;
-				boardSquare[index] = 
+				int currentIndex = (x*3) + y;
+				boardSquare[currentIndex] = 
 						this.board[xStart + x][yStart + y];
 			}
 		}
