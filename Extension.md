@@ -20,3 +20,12 @@ To add a new board, the board has to be first converted into a 9x9 int array. Fo
 
 Then initialize the array inside `newGame()`and place it inside the`boards` variable. Also, `Random.nextInt` has to be called with the length of `boards` so that all the boards have an equal chance of being initialized when the `New Game` button is clicked by the user. 
 
+## 2. Add Show Solution Button
+
+Although there is a check solution button to check if the board has been solved, it would be nice to have a button to display the solution. This function could be implemented within the `Controller` class and `SudokuView` class.
+
+Begin by creating a new button in `SudokuView` and assinging it the handler. Now create the function for displaying the solution in the `Controller` class.
+
+The function will have to work with the `currentBoard` array to display the solution. Each cell in the array has a `currentNum` value which can be changed to the correct value.
+
+The new function should return nothing.
