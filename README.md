@@ -1,43 +1,28 @@
 # Sudoku290
 
-Sudoku290 is a unique take on the classic game of Sudoku. It is a puzzle game consisting of a simple 9x9 grid that will begin with a few grid boxes that are already filled; the boxes will be filled with numbers from 1-9. Your job is to fill in the remaining grid boxes with numbers 1-9 so that each row and column only contain unique digits. You can play between five preset Sudoku290 boards that will be sure to challenge your brain!
+Sudoku290 is an implementation of the classic Sudoku game. It is a number placement puzzle game consisting of a simple 9x9 grid. Some of the cells in the grid contain preset numbers. Your job is to fill in the remaining cells with the digits from 1 to 9 in such a way that no digit repeats in each row, column and inner 3X3 square. That is, each row, column, and inner 3X3 square contain all of the digits from 1 to 9. You can play between five different Sudoku290 boards that will be sure to challenge your brain!
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Follow these instructions to install a copy of the game onto your local machine to run the game, or for development and testing purposes.
 
-### Prerequisites
+### To run the game 
 
-What things you need to install the software and how to install them
+1. Clone this repository with the following command:
+`git clone https://github.com/DaryaShyroka/Sudoku290`
 
-```
-Give examples
-```
+2. Navigate to the `src` directory, then open `Sudoku`.
 
-### Installing
+2. Import the entire project into Eclipse.
 
-A step by step series of examples that tell you how to get a development env running
+3. Run `SudokuView.java`. The game should start!
 
-Say what the step will be
+### To edit the code
 
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
+Open `SudokuView.java`, `SudokuBoard.java`, `Controller.java`, `CellButton.java` in Eclipse and bless Sudoku290 with your coding skills!
 
 ### How to Play Sudoku290
-Welcome to Sudoku290!
-
-After downloading and installing the game, run the executable to arrive at the starting screen.
-
-The starting screen consists of 3 buttons (New Game, Clear, Check) and an empty 9x9 Sudoku Board.
+The starting screen consists of 3 buttons (New Game, Clear, Check) and a 9x9 Sudoku Board with some preset numbers.
 
 ![new_game_screen](https://user-images.githubusercontent.com/46885386/54781800-ac380780-4bf3-11e9-8ec4-f0c10efc6fe8.jpg)
 
@@ -57,7 +42,7 @@ Once finished, the player can select New Game to start playing on a different bo
 
 ## Authors
 
-Darya Shyroka, Derek, Ikjot, Sam, Daniel Ceniceros, Saadaf
+Darya Shyroka, Derek Jang, Ikjot Dhillon, Sam Newby, Daniel Ceniceros, Saadaf Chowdhury
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
@@ -67,7 +52,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
 * README template: **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-* Inspiration
-* etc
+* Sudoku boards - we used game boards from this lovely site: https://www.puzzles.ca/sudoku/?fbclid=IwAR2-rysiASKKw04_LtzqaU13S3CMTY37WnUJWLyk1iSKhkg3G2Y1U25sQ9k
