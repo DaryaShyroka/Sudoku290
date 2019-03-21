@@ -88,14 +88,11 @@ public class SudokuView extends Application implements EventHandler<ActionEvent>
     			
     			
     			if(i==3||i==6) {
-    				
     				btnLeftMargin = 5;
-    			}else if(i==0){
-    				
+    			}else if(i==0){    				
     				btnLeftMargin = 15;
     			}
     			if(k==0||k==3||k==6) {
-    				
     				btnTopMargin = 5;
     			} else if (k==2|| k==5|| k==8) {
     				
@@ -173,7 +170,7 @@ public class SudokuView extends Application implements EventHandler<ActionEvent>
 				this.controller.clear();
 			}
 			else if(click == "Check") {
-				this.controller.check();
+				this.controller.isSolved();
 			} else {
 				System.out.println("I dont know how you did this");
 			}	
@@ -229,7 +226,7 @@ public class SudokuView extends Application implements EventHandler<ActionEvent>
 
 
 	public void update(int value, int x, int y) {
-		if(!this.controller.currentBoard.notChangable[x][y]) {
+		if(!this.controller.currentBoard.isNotChangable[x][y]) {
 			this.boardButtons[x][y].setStyle("-fx-text-fill: blue");
 		}else{
 			this.boardButtons[x][y].setStyle("-fx-text-fill: black");
