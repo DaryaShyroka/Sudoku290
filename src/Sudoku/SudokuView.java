@@ -58,35 +58,10 @@ public class SudokuView extends Application implements EventHandler<ActionEvent>
     			CellButton btn = new CellButton(pos);
 				btn.setOnAction(this);
     			btn.setMinSize(50, 50);
-    			btn.setMaxSize(50, 50);
-    			btn.getStyleClass().add("sudokuButton");
     			board.add(btn, i, k);
     			boardButtons[k][i] = btn;
     			int btnLeftMargin = 0;
     			int btnTopMargin = 0;
-    			
-    			if (i % 3 == 0) {
-    				if (k % 3 == 0) {
-    					btn.getStyleClass().add("topLeftBorder");
-    				} else if ((k+1) % 3 == 0) {
-    					btn.getStyleClass().add("bottomLeftBorder");
-    				}
-    				btn.getStyleClass().add("leftBorder");
-    			} else if ((i + 1) % 3 == 0) {
-    				if (k % 3 == 0) {
-    					btn.getStyleClass().add("topRightBorder");
-    				} else if ((k+1) % 3 == 0) {
-    					btn.getStyleClass().add("bottomRightBorder");
-    				}
-    				btn.getStyleClass().add("rightBorder");
-    			} else if (k % 3 == 0) {
-    				btn.getStyleClass().add("topBorder");
-    			} else if ((k+1) % 3 == 0){
-    				btn.getStyleClass().add("bottomBorder");
-    			}
-    			
-    			
-    			
     			if(i==3||i==6) {
     				btnLeftMargin = 5;
     			}else if(i==0){    				
@@ -119,30 +94,26 @@ public class SudokuView extends Application implements EventHandler<ActionEvent>
 		
 		Button newGame = new Button("New Game");
 		newGame.setOnAction(this);
-		newGame.getStyleClass().add("leftButtons");
+		newGame.setStyle("-fx-font-size:20");
 		newGame.setMinSize(125, 50);
 		
 		Button clear = new Button("Clear");
 		clear.setOnAction(this);
-		clear.getStyleClass().add("leftButtons");
+		clear.setStyle("-fx-font-size:20");
 		clear.setMinSize(125, 50);
 		
 		Button check = new Button("Check");
 		check.setOnAction(this);
-		check.getStyleClass().add("leftButtons");
+		check.setStyle("-fx-font-size:20");
 		check.setMinSize(125, 50);
 		
 		leftPanel.getChildren().addAll(newGame, clear, check);
-		leftPanel.setPadding(new Insets(20, 0, 0, 10));
-		leftPanel.setSpacing(20);
-		leftPanel.getStyleClass().add("leftPanel");
 		
 		BorderPane border = new BorderPane();
 		border.setLeft(leftPanel);
 		border.setRight(makeBoard());
 		
 		Scene scene = new Scene(border);
-		scene.getStylesheets().add("styles.css");
 		scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {
