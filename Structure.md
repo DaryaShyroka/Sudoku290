@@ -1,6 +1,6 @@
 ## Directory Structure
 
-This is where we explain how our directory is structured; 
+* `src` contains all Java source code.
 
 ## Major Classes and Functions
 
