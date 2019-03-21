@@ -19,7 +19,7 @@ Follow these instructions to install a copy of the game onto your local machine 
 
 ### To edit the code
 
-Open `SudokuView.java`, `SudokuBoard.java`, `Controller.java`, `CellButton.java` in Eclipse.
+Open `SudokuView.java`, `SudokuBoard.java`, `Controller.java`, `CellButton.java` in Eclipse and bless Sudoku290 with your coding skills!
 
 ### How to Play Sudoku290
 Welcome to Sudoku290!
@@ -56,7 +56,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
 * README template: **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-* Inspiration
-* etc
+* Sudoku boards: 
