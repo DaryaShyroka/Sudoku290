@@ -26,10 +26,10 @@ To add a new board:
 
 ## 2. Add Show Solution Button
 
-Although there is a check solution button to check if the board has been solved, it would be nice to have a button to display the solution. This function could be implemented within the `Controller` class and `SudokuView` class.
+Although there is a check solution button to check if the board has been solved, it would be nice to have a button to display the solution. This function could be implemented within the `Controller` and `SudokuView` classes. Here is how to add a 'Show Solution' button:
 
-Begin by creating a new button in `SudokuView` and assinging it the handler. Now create the function for displaying the solution in the `Controller` class.
+1. Begin by creating a new button in `SudokuView` and assinging it the handler.
 
-The function will have to work with the `currentBoard` array to display the solution. Each cell in the array has a `currentNum` value which can be changed to the correct value.
+2. Now, create the function for displaying the solution in the `Controller` class. The function will have to work with the `currentBoard` array to display the solution. Each cell in the array has a `currentNum` value which can be changed to the correct value.
 
-The new function should return nothing.
+The new function should have a `void` return type.
