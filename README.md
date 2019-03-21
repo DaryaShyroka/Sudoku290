@@ -37,19 +37,23 @@ Welcome to Sudoku290!
 
 After downloading and installing the game, run the executable to arrive at the starting screen.
 
-The starting screen consists of 3 buttons (New Game, Clear, Check) and an empty 9x9 Sudoku Board. To begin the game, press the New Game button which will load starting numbers on to the board.
+The starting screen consists of 3 buttons (New Game, Clear, Check) and an empty 9x9 Sudoku Board.
+
+![new_game_screen](https://user-images.githubusercontent.com/46885386/54781800-ac380780-4bf3-11e9-8ec4-f0c10efc6fe8.jpg)
 
 The empty cells indicate positions where the player can input numbers. These cells can be changed and cleared at any time. The starting cells which already contain numbers cannot be changed or cleared. 
 
 To input a number into the cell, the player must first click on a valid cell and input a valid number from the keyboard. Entering any character other than 1-9 will result in nothing being inputed and an error message being printed. Attempting to enter a number into a starting cell will result in nothing being changed.
 
+![played_a_little](https://user-images.githubusercontent.com/46885386/54781905-f4efc080-4bf3-11e9-8ea9-c906556eff23.jpg)
+
 The player can click the Clear and Check button during anytime of the game. Selecting Clear will result in removing all numbers the player entered. The Check button will test the board's values and show a dialogue box indicating whether the player is finished. 
+
+![not_done_yet](https://user-images.githubusercontent.com/46885386/54782065-662f7380-4bf4-11e9-802c-5b472f81d718.jpg)
 
 Once finished, the player can select New Game to start playing on a different board or the player can exit.
 
-## Screenshots
-
-Our screenshots will go here
+![done](https://user-images.githubusercontent.com/46885386/54782084-6fb8db80-4bf4-11e9-955c-c47a11f84fcb.jpg)
 
 ## Authors
 
