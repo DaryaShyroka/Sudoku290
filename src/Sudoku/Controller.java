@@ -82,7 +82,7 @@ public class Controller{
 		int randomBoard = new Random().nextInt(5);
 		for(int x = 0; x < 9; x++) {
 			for(int y = 0; y < 9; y++) {
-				this.currentBoard.notChangable[x][y] = false;
+				this.currentBoard.isNotChangable[x][y] = false;
 			}
 		}
 		this.clear();
@@ -116,12 +116,12 @@ public class Controller{
 	 * @return true if and only if currentBoard is complete and correct.
 	 */
 	
-	public boolean check() {
+	public boolean isSolved() {
 		for(int i = 0; i < 9; i++) { // check if the rows are complete
 			int[] rows = currentBoard.getRow(i);
 			int[] cols = currentBoard.getCol(i);
 			int[] x9sq = currentBoard.getSquare(i);
-			if(!checkUnique(rows) || !checkUnique(cols) || !checkUnique(x9sq)) {
+			if(!isUnique(rows) || !isUnique(cols) || !isUnique(x9sq)) {
 				JLabel lose = new JLabel("Please double check your inputs!");
 				lose.setFont(new Font("Arial", Font.BOLD, 18));
 				JOptionPane.showMessageDialog(null, lose,"Incorrect!", JOptionPane.WARNING_MESSAGE);
@@ -143,7 +143,7 @@ public class Controller{
 	 * @return true if and only if the array completely spans the 
 	 * integer range from 1 to 9.
 	 */
-	private boolean checkUnique(int[] ilist){
+	private boolean isUnique(int[] ilist){
 		int keepTrack = 1; //the number we are looking for in ilist
 		boolean foundIt = false;
 		while(keepTrack <= 9) {	
@@ -173,10 +173,10 @@ public class Controller{
 	 * @param position The position array holding the x and y value of the button
 	 * @param value The value to set the button to
 	 */
-	public void updateBoard(int[] position, int value, boolean newGame) {
+	public void updateBoard(int[] position, int value, boolean isNewGame) {
 		int x = position[0];
 		int y = position[1];
-		if (newGame == true && value != 0) {
+		if (isNewGame == true && value != 0) {
 			currentBoard.setValue(value, x, y, true);
 		} else {
 			currentBoard.setValue(value, x, y);

@@ -66,12 +66,14 @@ public class SudokuView extends Application implements EventHandler<ActionEvent>
     			int btnLeftMargin = 0;
     			int btnTopMargin = 0;
     			if(i==3||i==6) {
-    				btnLeftMargin = 10;
-    			}else if(i==0){
+    				btnLeftMargin = 5;
+    			}else if(i==0){    				
     				btnLeftMargin = 15;
     			}
-    			if(k==3||k==6) {
-    				btnTopMargin = 10;
+    			if(k==0||k==3||k==6) {
+    				btnTopMargin = 5;
+    			} else if (k==2|| k==5|| k==8) {
+    				
     			}
     			board.setMargin(btn,new Insets(btnTopMargin,0,0,btnLeftMargin));
     		}
@@ -139,7 +141,7 @@ public class SudokuView extends Application implements EventHandler<ActionEvent>
 				this.controller.clear();
 			}
 			else if(click == "Check") {
-				this.controller.check();
+				this.controller.isSolved();
 			} else {
 				System.out.println("I dont know how you did this");
 			}	
@@ -206,7 +208,7 @@ public class SudokuView extends Application implements EventHandler<ActionEvent>
      * @param y: y-coordinate of the cell.
      */
 	public void update(int value, int x, int y) {
-		if(!this.controller.currentBoard.notChangable[x][y]) {
+		if(!this.controller.currentBoard.isNotChangable[x][y]) {
 			this.boardButtons[x][y].setStyle("-fx-text-fill: blue");
 		}else{
 			this.boardButtons[x][y].setStyle("-fx-text-fill: black");

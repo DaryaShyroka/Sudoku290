@@ -9,7 +9,7 @@ package Sudoku;
 public class SudokuBoard {
 
 	private int board[][] = new int[9][9];
-	public boolean notChangable[][] = new boolean[9][9];
+	public boolean isNotChangable[][] = new boolean[9][9];
 	private SudokuView view;
 
     public SudokuBoard(SudokuView view){
@@ -33,7 +33,7 @@ public class SudokuBoard {
 	 * @param y The y coordinate of the array.
 	 */
 	public void setValue(int value, int x, int y) {
-		if (this.notChangable[x][y] != true) {
+		if (this.isNotChangable[x][y] != true) {
 			this.board[x][y] = value;
 			view.update(value, x, y);
 		}
@@ -45,15 +45,15 @@ public class SudokuBoard {
 	 * @param value
 	 * @param x
 	 * @param y
-	 * @param newGame
+	 * @param isNewGame
 	 */
-	public void setValue(int value, int x, int y, boolean newGame) {
-		if (newGame == true) {
-			this.notChangable[x][y] = true;
+	public void setValue(int value, int x, int y, boolean isNewGame) {
+		if (isNewGame == true) {
+			this.isNotChangable[x][y] = true;
 			this.board[x][y] = value;
 			view.update(value, x, y);
 		} else {
-			if (this.notChangable[x][y] != true) {
+			if (this.isNotChangable[x][y] != true) {
 				this.board[x][y] = value;
 				view.update(value, x, y);
 			}
