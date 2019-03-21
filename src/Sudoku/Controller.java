@@ -98,8 +98,7 @@ public class Controller{
 			for(int j = 0; j < 9; j++) {
 				int pos[] = {i,j};
 				updateBoard(pos,0, false); 
-				//[i,j] are the coordinates of the cell, 0 is a placeholder
-				// value for an empty cell.
+			
 			}
 		}	
 	}

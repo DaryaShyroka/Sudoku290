@@ -1,6 +1,6 @@
 package Sudoku;
 
-/*
+/**
 * A CellButton represents a cell in the sudoku grid.
 * Attributes:
 *   position: position in the grid
@@ -78,7 +78,7 @@ public class CellButton extends Button{
         return this.position;
     }
 
-    /*
+    /**
     * Clear the number at this button
     */
     public void clear(){

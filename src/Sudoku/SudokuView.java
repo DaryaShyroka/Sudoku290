@@ -24,8 +24,7 @@ import javafx.geometry.Insets;
  *
  */
 public class SudokuView extends Application implements EventHandler<ActionEvent> {
-	//private Stage stage;
-	//private Model model;
+
 	private Controller controller;
 	private CellButton currentButton;
 	private CellButton[][] boardButtons;
@@ -52,8 +51,6 @@ public class SudokuView extends Application implements EventHandler<ActionEvent>
 	private GridPane makeBoard() {
 		boardButtons = new CellButton[9][9];
 		GridPane board = new GridPane();
-		//board.setHgap(14);
-		//board.setVgap(14);
 		
 		for (int i = 0; i < 9; i++) {
     		for (int k = 0; k < 9; k++) {
@@ -81,11 +78,6 @@ public class SudokuView extends Application implements EventHandler<ActionEvent>
 	}
 	
 	
-	/*public SudokuView(Stage stage) {
-		//this.model = model;
-		this.stage = stage;
-		initUI(stage);
-	}*/
 	
 	/**
 	 * Takes a stage and creates the Sudoku game control buttons. 
@@ -123,6 +115,7 @@ public class SudokuView extends Application implements EventHandler<ActionEvent>
                 onKeyPress(event);
             }
         });
+		this.controller.newGame();
 		stage.setScene(scene);
 		stage.show();
 	}

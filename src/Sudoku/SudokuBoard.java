@@ -17,8 +17,7 @@ public class SudokuBoard {
 	private int board[][] = new int[9][9];
 	public boolean notChangable[][] = new boolean[9][9];
 	private SudokuView view;
-	//Model model;
-	//SudokuView view;
+
     public SudokuBoard(SudokuView view){
     	this.view = view;
 	}
@@ -110,17 +109,5 @@ public class SudokuBoard {
 		}
 		return boardSquare;
 	} 
-
-	/**
-	 * Starts the game.
-	 * @param stage The stage for the game.
-	 */
-	/*@Override
-	public void start(Stage stage) throws Exception {
-		// TODO Auto-generated method stub
-		//this.model = new Model;
-		this.view = new SudokuView(stage);
-	}
-	*/
 	
 }
