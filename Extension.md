@@ -2,8 +2,11 @@
 
 This is where we list and describe potential extensions to Sudoku290
 
-## 1. Extention 1
+## 1. Add Different Implementations of Sudoku
 
 
 
-## 2. Extention 2
+## 2. Vary level difficulty
+Another extension that could be made to the game is varying the difficulty of the levels, or even allowing the user to select the difficulty that they would like to play. 
+
+## 3. Intro Screen
