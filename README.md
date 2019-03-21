@@ -53,4 +53,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Acknowledgments
 
 * README template: **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-* Sudoku boards: 
+* Sudoku boards - we used game boards from this lovely site: https://www.puzzles.ca/sudoku/?fbclid=IwAR2-rysiASKKw04_LtzqaU13S3CMTY37WnUJWLyk1iSKhkg3G2Y1U25sQ9k
