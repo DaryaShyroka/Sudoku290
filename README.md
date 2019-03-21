@@ -11,8 +11,6 @@ Follow these instructions to install a copy of the game onto your local machine 
 1. Clone this repository with the following command:
 `git clone https://github.com/DaryaShyroka/Sudoku290`
 
-2. Navigate to the `src` directory, then open `Sudoku`.
-
 2. Import the entire project into Eclipse.
 
 3. Run `SudokuView.java`. The game should start!
@@ -44,9 +42,7 @@ Once finished, the player can select New Game to start playing on a different bo
 
 ## Authors
 
-Darya Shyroka, Derek Jang, Ikjot Dhillon, Sam Newby, Daniel Ceniceros, Saadaf Chowdhury
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+Darya Shyroka, Derek Jang, Ikjot Dhillon, Sam Newby, Daniel Ceniceros, Saadaf Chowdhury. 
 
 ## License
 
