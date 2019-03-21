@@ -12,12 +12,16 @@ public class SudokuBoard {
 	public boolean isNotChangable[][] = new boolean[9][9];
 	private SudokuView view;
 
+	/**
+	 * Sets up a new SudokuBoard
+	 * @param view The view that is notified when a value is changed on the board
+	 */
     public SudokuBoard(SudokuView view){
     	this.view = view;
 	}
 
 	/**
-	 *
+	 * Gets the current board.
 	 * @return the integer array board
 	 */
 	public int[][] getBoard() {
@@ -26,8 +30,7 @@ public class SudokuBoard {
 
 
 	/**
-	 * Set the value of the board array and buttons array at position x and y.
-	 *
+	 * Set the value of the board array and buttons array at position x and y if the cell is not a preset cell.
 	 * @param value The number to be stored.
 	 * @param x The x coordinate of the array.
 	 * @param y The y coordinate of the array.
@@ -40,12 +43,11 @@ public class SudokuBoard {
 	}
 	
 	/**
-	 * Sets the board array with the new game values that are not changable
-	 * 
-	 * @param value
-	 * @param x
-	 * @param y
-	 * @param isNewGame
+	 * Sets the board array with a optional new game argument which sets if a button value can be changed. This can prevent players for changing preset cells.
+	 * @param value The number to be stored.
+	 * @param x The x coordinate of the array.
+	 * @param y The y coordinate of the array.
+	 * @param isNewGame If true the cell is set to not changeable. Used when setting preset cells.
 	 */
 	public void setValue(int value, int x, int y, boolean isNewGame) {
 		if (isNewGame == true) {

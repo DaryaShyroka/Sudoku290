@@ -28,10 +28,8 @@ public class CellButton extends Button{
     private int currentNum;
 
     /**
-     * Constructor with mandatory parameters.
-     * Position set, currentNum can be set afterwards (grid starts out with some buttons blank).
-     *
-     * @param position
+     * Creates a new CellButton with a position, currentNum can be set afterwards (grid starts out with some buttons blank).
+     * @param position An array holding the x and y position of the button
      */
     public CellButton(int position[]){
         this.position = position;
@@ -40,10 +38,9 @@ public class CellButton extends Button{
     }
 
     /**
-     * Constructor with all parameters set, including currentNum.
-     *
-     * @param position
-     * @param num
+     * Creates a new CellButton with a position and number.
+     * @param position An array holding the x and y position of the button
+     * @param num The number which currentNum is set to
      */
     public CellButton(int[] position, int num){
         this.position = position;
@@ -51,9 +48,8 @@ public class CellButton extends Button{
     }
 
     /**
-     * Method to set the current number of the CellButton
-     *
-     * @param num
+     * Method to set the current number and text of the CellButton
+     * @param num The number to set CellButton number to.
      */
     public void setNum(int num){
             this.currentNum = num;
@@ -66,7 +62,6 @@ public class CellButton extends Button{
 
     /**
      * Method to get the current number of the CellButton
-     *
      * @return currentNum
      */
     public int getNum(){
@@ -75,7 +70,6 @@ public class CellButton extends Button{
 
     /**
      * Method to get the position of the CellButton
-     *
      * @return position
      */
     public int[] getPosition(){
