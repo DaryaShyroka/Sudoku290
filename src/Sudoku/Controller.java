@@ -3,7 +3,10 @@ package Sudoku;
 import java.util.Arrays;
 import java.util.Random;
 
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+
+import java.awt.Font;
 
 public class Controller{
 	
@@ -116,11 +119,15 @@ public class Controller{
 			int[] cols = currentBoard.getCol(i);
 			int[] x9sq = currentBoard.getSquare(i);
 			if(!checkUnique(rows) || !checkUnique(cols) || !checkUnique(x9sq)) {
-				JOptionPane.showMessageDialog(null, "Incorrect! Please double check your inputs!");
+				JLabel lose = new JLabel("Please double check your inputs!");
+				lose.setFont(new Font("Arial", Font.BOLD, 18));
+				JOptionPane.showMessageDialog(null, lose,"Incorrect!", JOptionPane.WARNING_MESSAGE);
 				return false;
 			}
 		}
-		JOptionPane.showMessageDialog(null, "Congratulations! You have all the correct inputs!");
+		JLabel win = new JLabel("You have all the correct inputs!");
+		win.setFont(new Font("Arial", Font.BOLD, 18));
+		JOptionPane.showMessageDialog(null, win, "Congratulations!", JOptionPane.PLAIN_MESSAGE);
 		return true;
 	}
 	
