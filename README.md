@@ -13,7 +13,7 @@ Follow these instructions to install a copy of the game onto your local machine 
 
 2. Navigate to the `src` directory, then open `Sudoku`.
 
-2. Open `SudokuView.java` in Eclipse.
+2. Import the entire project into Eclipse.
 
 3. Run `SudokuView.java`. The game should start!
 
@@ -22,11 +22,7 @@ Follow these instructions to install a copy of the game onto your local machine 
 Open `SudokuView.java`, `SudokuBoard.java`, `Controller.java`, `CellButton.java` in Eclipse and bless Sudoku290 with your coding skills!
 
 ### How to Play Sudoku290
-Welcome to Sudoku290!
-
-After downloading and installing the game, run the executable to arrive at the starting screen.
-
-The starting screen consists of 3 buttons (New Game, Clear, Check) and an empty 9x9 Sudoku Board.
+The starting screen consists of 3 buttons (New Game, Clear, Check) and a 9x9 Sudoku Board with some preset numbers.
 
 ![new_game_screen](https://user-images.githubusercontent.com/46885386/54781800-ac380780-4bf3-11e9-8ec4-f0c10efc6fe8.jpg)
 
@@ -46,7 +42,7 @@ Once finished, the player can select New Game to start playing on a different bo
 
 ## Authors
 
-Darya Shyroka, Derek, Ikjot, Sam, Daniel Ceniceros, Saadaf
+Darya Shyroka, Derek Jang, Ikjot Dhillon, Sam Newby, Daniel Ceniceros, Saadaf Chowdhury
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
