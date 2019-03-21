@@ -17,6 +17,8 @@ Follow these instructions to install a copy of the game onto your local machine 
 
 3. Run `SudokuView.java`. The game should start!
 
+<img width="406" alt="RunInEclipse" src="https://user-images.githubusercontent.com/35867610/54786394-215d0a00-4bff-11e9-9536-148c92151ef9.PNG">
+
 ### To edit the code
 
 Open `SudokuView.java`, `SudokuBoard.java`, `Controller.java`, `CellButton.java` in Eclipse and bless Sudoku290 with your coding skills!
