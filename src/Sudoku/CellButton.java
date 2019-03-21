@@ -16,6 +16,7 @@ package Sudoku;
 */
 
 import javafx.scene.control.*;
+import javafx.scene.text.*;
 
 public class CellButton extends Button{
 
@@ -31,6 +32,7 @@ public class CellButton extends Button{
     public CellButton(int position[]){
         this.position = position;
         this.currentNum = 0;
+        this.setFont(new Font(24));
     }
 
     /**

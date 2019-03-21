@@ -16,6 +16,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.geometry.Insets;
 
 /**
  * This class contains what the player sees on the Sudoku game window.
@@ -51,6 +52,8 @@ public class SudokuView extends Application implements EventHandler<ActionEvent>
 	private GridPane makeBoard() {
 		boardButtons = new CellButton[9][9];
 		GridPane board = new GridPane();
+		//board.setHgap(14);
+		//board.setVgap(14);
 		
 		for (int i = 0; i < 9; i++) {
     		for (int k = 0; k < 9; k++) {
@@ -60,6 +63,17 @@ public class SudokuView extends Application implements EventHandler<ActionEvent>
     			btn.setMinSize(50, 50);
     			board.add(btn, i, k);
     			boardButtons[k][i] = btn;
+    			int btnLeftMargin = 0;
+    			int btnTopMargin = 0;
+    			if(i==3||i==6) {
+    				btnLeftMargin = 10;
+    			}else if(i==0){
+    				btnLeftMargin = 15;
+    			}
+    			if(k==3||k==6) {
+    				btnTopMargin = 10;
+    			}
+    			board.setMargin(btn,new Insets(btnTopMargin,0,0,btnLeftMargin));
     		}
     	}
 		
@@ -187,6 +201,8 @@ public class SudokuView extends Application implements EventHandler<ActionEvent>
 	public void update(int value, int x, int y) {
 		if(!this.controller.currentBoard.notChangable[x][y]) {
 			this.boardButtons[x][y].setStyle("-fx-text-fill: blue");
+		}else{
+			this.boardButtons[x][y].setStyle("-fx-text-fill: black");
 		}
 		this.boardButtons[x][y].setNum(value);
 	}
