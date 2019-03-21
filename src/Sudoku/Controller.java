@@ -8,6 +8,9 @@ import javax.swing.JOptionPane;
 
 import java.awt.Font;
 
+/**
+ * @authors Saadaf Chowdhury, Darya Shyroka, Sam Newby, Ikjot Dhillon, Derek Jang, Daniel Ceniceros.
+ */
 public class Controller{
 	
 	public SudokuBoard currentBoard;

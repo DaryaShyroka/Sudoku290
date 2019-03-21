@@ -20,7 +20,7 @@ import javafx.geometry.Insets;
 
 /**
  * This class contains what the player sees on the Sudoku game window.
- * @author Derek Jang
+ * @authors Derek Jang, Ikjot Dhillon, Saadaf Chowdhury, Sam Newby, Darya Shyroka, Daniel Ceniceros
  *
  */
 public class SudokuView extends Application implements EventHandler<ActionEvent> {
@@ -28,11 +28,6 @@ public class SudokuView extends Application implements EventHandler<ActionEvent>
 	private Controller controller;
 	private CellButton currentButton;
 	private CellButton[][] boardButtons;
-	/**
-	 * Initializes a stage for the Sudoku game window.
-	 * @param stage What is displayed on the screen.
-	 */
-	
 	
 	/** 
 	 * Launches the game.
@@ -42,12 +37,20 @@ public class SudokuView extends Application implements EventHandler<ActionEvent>
 		launch(args);
 	}
 	
-	
+	/**
+	 * Initializes a stage for the Sudoku game window.
+	 * @param stage What is displayed on the screen.
+	 */
 	@Override
 	public void start(Stage stage) throws Exception {
 		this.initUI(stage);	
 	}
 	
+	/**
+	 * Creates and returns a gridPane object containing CellButtons that numbers 
+	 * can be placed into.
+	 * @return: GridPane for numbers. 
+	*/
 	private GridPane makeBoard() {
 		boardButtons = new CellButton[9][9];
 		GridPane board = new GridPane();
@@ -75,16 +78,13 @@ public class SudokuView extends Application implements EventHandler<ActionEvent>
     	}
 		
 		return board;
-	}
-	
-	
+	}	
 	
 	/**
 	 * Takes a stage and creates the Sudoku game control buttons. 
-	 * @param stage What is displayed on the screen.
+	 * @param stage: what is displayed on the screen.
 	 */
 	private void initUI(Stage stage) {
-		
 		stage.setTitle("Sudoku290");
 		this.controller = new Controller(new SudokuBoard(this));
 		
@@ -125,7 +125,7 @@ public class SudokuView extends Application implements EventHandler<ActionEvent>
 	
 	/**
 	 * Handles the player's interaction with the control buttons. 
-	 * @param event An ActionEvent with the buttons. 
+	 * @param event: an ActionEvent with the buttons. 
 	 */
 	public void handle(ActionEvent event) {
 		if (event.getSource().getClass() == CellButton.class) {
@@ -146,6 +146,11 @@ public class SudokuView extends Application implements EventHandler<ActionEvent>
 		}
 	}
 	
+	/**
+	 * If a key is pressed and a button is selected, changes that cell's value to the
+	 * number pressed and updates the view.
+	 * @param event: KeyEvent indicating user has typed a character.
+	 */
 	private void onKeyPress(KeyEvent event) {
 		int numberPressed = -1;
 		switch (event.getCode()) {
@@ -193,7 +198,13 @@ public class SudokuView extends Application implements EventHandler<ActionEvent>
 		}
 	}
 
-
+    /**
+     * Set the number at position (x,y) in this.boardButtons to the value given
+     * by the user.
+     * @param value: the value the user typed.
+     * @param x: x-coordinate of the cell.
+     * @param y: y-coordinate of the cell.
+     */
 	public void update(int value, int x, int y) {
 		if(!this.controller.currentBoard.notChangable[x][y]) {
 			this.boardButtons[x][y].setStyle("-fx-text-fill: blue");

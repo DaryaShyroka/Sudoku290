@@ -18,6 +18,10 @@ package Sudoku;
 import javafx.scene.control.*;
 import javafx.scene.text.*;
 
+/**
+ * A CellButton is a button in the SudokuBoard array. 
+ * @authors Darya Shyroka, Daniel Ceniceros, Sam Newby, Ikjot Dhillon, Derek Jang, Saadaf Newby.
+ */
 public class CellButton extends Button{
 
     private int[] position;

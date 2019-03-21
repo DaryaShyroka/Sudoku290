@@ -2,10 +2,9 @@ package Sudoku;
 
 /**
  * This class represents the Sudoku board that will be displayed on the view.
- * @author Ikjot Dhillon, Derek Jang, Saadaf Chowdhury
+ * @authors Ikjot Dhillon, Derek Jang, Saadaf Chowdhury, Darya Shyroka, Daniel Ceniceros, Sam Newby
  *
  */
-
 
 public class SudokuBoard {
 
