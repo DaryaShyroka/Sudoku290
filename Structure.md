@@ -1,49 +1,49 @@
 ## Directory Structure
 
-- `src` contains all Java source code in the `Sudoku` folder
+- `src` contains all Java source code in the `Sudoku` folder.
 
 ## Code Structure
 
 ## Major Classes and Functions
 
-This is where we explain the major classes and functions in Sudoku290.
+The major classes and functions in Sudoku290 are discussed below.
 
 ### SudokuView
 
-Contains the view, everything that is visible in the game. SudokuView initializes the GUI, launches the game , and updates the board when user input is given.
+This class contains the view; which handles everything that is visible in the game. SudokuView initializes the GUI, launches the game, and updates the board whenever user input is provided.
 
 #### Methods
 
-- `initUI(Stage stage)` Sets up the stage. Adds the grid and the new game buttons to the GUI.
-- `makeBoard()` sets up the Sudoku Board cells and adds style to each cell.
+- `initUI(Stage stage)`: Sets up the stage; adding the grid and the new game buttons to the GUI.
+- `makeBoard()`: Sets up the SudokuBoard cells and adds a style to each cell.
 
 ### Controller
 
-Contains the logic of the game and updates the model. Sets the values of the model and handles button presses.
+This class contains the logic of the game and updates the model; setting the values and handling button presses.
 
 #### Methods
 
-- `newGame()` resets the current board and starts a new Sudoku game. Randomly picks between 1 of 5 boards and updates the board with the new values.
-- `updateBoard(int[x,y] position, int value, boolean isNewGame)` changes the current value of the cell in position {x,y} to the int value. If `isNewGame` is true, the button is set so the value of the cell cannot be changed. This is to prevent players from changing preset cells.
-- `isUnique(int[1..9] ilist)` Returns true if `ilist` contains all integers 1 to 9 without duplicates.
-- `isSolved()` Returns true if the current board state is a winning state.
-- `clear()` Resets the board to the state at the beggining of the game. Keeps values of starting cells.
+- `newGame()`: Resets the current board and starts a new Sudoku290 game. It randomly picks between 5 preset boards and updates the current board with the new values.
+- `updateBoard(int[x,y] position, int value, boolean isNewGame)`: Changes the current value of the cell at position {x,y} to `value`. If `isNewGame` is true, the button is set so the value of the cell cannot be changed. This prevents players from changing cells with preset numbers.
+- `isUnique(int[1..9] ilist)`: Returns true if `ilist` contains all integers 1 to 9 without duplicates.
+- `isSolved()`: Returns true if the current board is in a winning state.
+- `clear()`: Resets the board to the beggining state of the game; keeping the values of starting cells the same and wiping user-inputted values.
 
 ### SudokuBoard
 
-Contains the model of the project. The current state of the board is saved in a 2x2 array of integers. When the model is updated the cells on the view are updated to match the model.
+This class contains the model of the project, where the current state of the board is saved in a 2x2 array of integers. When the model is updated, the cells on the view are also updated accordingly.
 
 #### Methods
 
-- `setValue(int value, int x, int y, boolean isNewGame)` If the button can be changed, set the cell at position (x,y) to the int value. If isNewGame is true the button is set so the value cannot be changed afterwards.
-- `getRow(int index)` Returns the row at int index.
-- `getColumn(int index)` Returns the column at int index.
-- `getSquare(int index)` Returns the 3x3 square with cell at int index as the top left corner.
+- `setValue(int value, int x, int y, boolean isNewGame)`: If the button can be changed, set the cell at position (x,y) to the `value`. If 'isNewGame' is true, the button is set so the value cannot be changed afterwards.
+- `getRow(int index)`: Returns the row at `index`.
+- `getColumn(int index)`: Returns the column at `index`.
+- `getSquare(int index)`: Returns the 3x3 square with cell at `index`.
 
 ### CellButton
 
-The individual cells of the Sudoku board. Contains the current value of the cell.
+Contains the individual cells of the SudokuBoard grid in the form of buttons, which hold an integer value.
 
 #### Methods
 
-- `setNum(int num)` sets the button's value `num`. Sets the text to match the number, leaves blank if num is 0.
+- `setNum(int num)`: Sets the cell's value to `num` and leaves the cell blank if `num` is 0.
