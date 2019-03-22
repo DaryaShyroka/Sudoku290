@@ -10,16 +10,16 @@ The major classes and functions in Sudoku290 are discussed below.
 
 ### SudokuView
 
-This class contains the view; which handles everything that is visible in the game. SudokuView initializes the GUI, launches the game, and updates the board whenever user input is provided.
+This class contains the view and handles everything that is visible in the game. SudokuView initializes the GUI, launches the game, and updates the board whenever user input is provided.
 
 #### Methods
 
-- `initUI(Stage stage)`: Sets up the stage; adding the grid and the new game buttons to the GUI.
+- `initUI(Stage stage)`: Sets up the stage by adding the grid and the new game buttons to the GUI.
 - `makeBoard()`: Sets up the SudokuBoard cells and adds a style to each cell.
 
 ### Controller
 
-This class contains the logic of the game and updates the model; setting the values and handling button presses.
+This class contains the logic of the game and updates the model. Controller sets the values and handles button presses.
 
 #### Methods
 
@@ -27,7 +27,7 @@ This class contains the logic of the game and updates the model; setting the val
 - `updateBoard(int[x,y] position, int value, boolean isNewGame)`: Changes the current value of the cell at position {x,y} to `value`. If `isNewGame` is true, the button is set so the value of the cell cannot be changed. This prevents players from changing cells with preset numbers.
 - `isUnique(int[1..9] ilist)`: Returns true if `ilist` contains all integers 1 to 9 without duplicates.
 - `isSolved()`: Returns true if the current board is in a winning state.
-- `clear()`: Resets the board to the beggining state of the game; keeping the values of starting cells the same and wiping user-inputted values.
+- `clear()`: Resets the board to the beggining state of the game. This keeps the values of starting cells the same and wiping user-inputted values.
 
 ### SudokuBoard
 
